@@ -1179,20 +1179,25 @@
         html.setAttribute('data-theme', savedTheme);
         updateThemeIcon(savedTheme);
 
-        // Fetch latest version from GitHub
+        // Yayınlanmış sürüm varsa indirme düğmesini göster; yoksa iletişime çevir.
         function loadVersion() {
+            const indirmeYok = 'mailto:ardaekiz72@gmail.com?subject=KDV%20%C3%87apraz%20Kontrol%20-%20%C4%B0ndirme%20Talebi';
             fetch('https://api.github.com/repos/ArdaEkiz0/kdv-indir/releases/latest')
-                .then(res => res.json())
+                .then(res => { if (!res.ok) throw new Error('release yok'); return res.json(); })
                 .then(data => {
-                    if (data && data.tag_name) {
-                        const v = data.tag_name.replace(/^v/, '');
-                        const hero = document.getElementById('hero-version');
-                        const cta = document.getElementById('cta-version');
-                        if (hero) hero.textContent = 'v' + v;
-                        if (cta) cta.textContent = 'v' + v;
-                    }
+                    if (!data || !data.tag_name) throw new Error('release yok');
+                    const v = data.tag_name.replace(/^v/, '');
+                    const hero = document.getElementById('hero-version');
+                    const cta = document.getElementById('cta-version');
+                    if (hero) hero.textContent = 'v' + v;
+                    if (cta) cta.textContent = 'v' + v;
                 })
-                .catch(() => {});
+                .catch(() => {
+                    document.querySelectorAll('a[href$="/releases/latest"]').forEach(a => {
+                        a.href = indirmeYok;
+                        a.innerHTML = '<i class="fas fa-envelope"></i> İndirme için e-posta';
+                    });
+                });
         }
         loadVersion();
 
