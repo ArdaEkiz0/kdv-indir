@@ -1193,7 +1193,7 @@
                     if (cta) cta.textContent = 'v' + v;
                 })
                 .catch(() => {
-                    document.querySelectorAll('a[href$="/releases/latest"]').forEach(a => {
+                    document.querySelectorAll('a[href*="/releases"]').forEach(a => {
                         a.href = indirmeYok;
                         a.innerHTML = '<i class="fas fa-envelope"></i> İndirme için e-posta';
                     });

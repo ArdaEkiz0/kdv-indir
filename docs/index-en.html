@@ -1191,7 +1191,7 @@
                     if (cta) cta.textContent = 'v' + v;
                 })
                 .catch(() => {
-                    document.querySelectorAll('a[href$="/releases/latest"]').forEach(a => {
+                    document.querySelectorAll('a[href*="/releases"]').forEach(a => {
                         a.href = noRelease;
                         a.innerHTML = '<i class="fas fa-envelope"></i> Email for Download';
                     });
