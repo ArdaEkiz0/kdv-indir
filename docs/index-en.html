@@ -1,496 +1,201 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KDV Cross-Check | Eliminate Human Error</title>
-    <meta name="description" content="Automate your VAT cross-checks. Compare e-invoices, journal slips and Excel invoices against VAT ledgers in seconds.">
-    
-    <!-- Fonts & Styles -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
-        .hero-gradient { background: radial-gradient(circle at top right, #EEF2FF, transparent), radial-gradient(circle at bottom left, #F8FAFC, transparent); }
-        .benefit-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KDV Cross-Check — match e-Invoices against your ledger in seconds</title>
+<meta name="description" content="KDV Cross-Check compares your e-Invoice/XML/PDF archive with ledger and control-sheet records line by line, and shows VAT mismatches, missing and duplicated entries in one color-coded table.">
+<link rel="canonical" href="https://ardaekiz0.github.io/kdv-indir/index-en.html">
+<link rel="alternate" hreflang="en" href="https://ardaekiz0.github.io/kdv-indir/index-en.html">
+<link rel="alternate" hreflang="tr" href="https://ardaekiz0.github.io/kdv-indir/">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
-                    <img src="logo.png" alt="Logo" class="w-8 h-8">
-                    <span class="text-xl font-bold tracking-tight text-slate-800">KDV <span class="text-indigo-600">Cross</span>-Check</span>
-                </div>
-                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                    <a href="#features" class="hover:text-indigo-600 transition-colors">Features</a>
-                    <a href="#how-it-works" class="hover:text-indigo-600 transition-colors">How it Works</a>
-                    <a href="#formats" class="hover:text-indigo-600 transition-colors">Formats</a>
-                    <a href="#pricing" class="hover:text-indigo-600 transition-colors">Licensing</a>
-                    <a href="index.html" class="flex items-center gap-1 bg-slate-100 px-3 py-1 rounded-full text-xs border border-slate-200 hover:bg-white transition-all">
-                        <span>🇹🇷 TR</span>
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 text-slate-600"><i data-lucide="menu"></i></button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 flex flex-col gap-4 text-sm font-medium text-slate-600">
-             <a href="#features" class="hover:text-indigo-600">Features</a>
-             <a href="#how-it-works" class="hover:text-indigo-600">How it Works</a>
-             <a href="#formats" class="hover:text-indigo-600">Formats</a>
-             <a href="#pricing" class="hover:text-indigo-600">Licensing</a>
-             <a href="index.html" class="text-indigo-600">🌐 Turkish Version</a>
-        </div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="."><img src="logo.png" alt="KDV Cross-Check logo"> KDV Cross-Check</a>
+    <nav class="topnav">
+      <a href="#nasil">How it works</a>
+      <a href="#ekran">Screenshots</a>
+      <a href="#formatlar">Formats</a>
+      <a href="#lisans">License</a>
+      <a href="#sss">FAQ</a>
     </nav>
+    <a class="lang" href="index.html">TR</a>
+    <a class="btn btn-sm" href="https://github.com/ArdaEkiz0/kdv-capraz-kontrol/releases/latest">Download</a>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 hero-gradient">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-semibold mb-6 border border-indigo-100 animate-fade-in">
-                    <i data-lucide="zap" class="w-3 h-3"></i>
-                    Compliant with CPA & Tax Consultant Standards
-                </div>
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-slate-900 mb-6">
-                    Eliminate Human Error,<br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Reclaim Your Time.</span>
-                </h1>
-                <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
-                    Stop manual VAT cross-checks. Automatically reconcile all your data—from e-invoices to journal slips—in seconds.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a id="download-btn" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-all hover:-translate-y-1 flex items-center gap-2">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                        Free Download <span id="version-tag" class="opacity-80 ml-1">...</span>
-                    </a>
-                    <a href="#how-it-works" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition-all flex items-center gap-2">
-                        <i data-lucide="play-circle" class="w-5 h-5"></i>
-                        How it Works?
-                    </a>
-                </div>
-                <div class="mt-8 flex items-center gap-4 text-slate-400 text-sm">
-                    <div class="flex -space-x-2">
-                        <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white"></div>
-                        <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white"></div>
-                        <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white"></div>
-                    </div>
-                    <span>Trusted by hundreds of CPAs across Turkey.</span>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="absolute inset-0 bg-indigo-200 blur-3xl opacity-30 rounded-full"></div>
-                <div class="relative animate-float">
-                    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden ring-1 ring-slate-900/5">
-                        <div class="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between">
-                            <div class="flex gap-1.5">
-                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                            </div>
-                            <span class="text-xs font-medium text-slate-400 italic">KDV Cross-Check v3.1.64</span>
-                            <div class="w-4"></div>
-                        </div>
-                        <div class="p-6 bg-white">
-                            <div class="flex items-center justify-between mb-6">
-                                <h3 class="text-sm font-bold text-slate-800">Overview</h3>
-                                <div class="flex gap-2">
-                                    <div class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                                    <span class="text-[10px] text-slate-400 uppercase tracking-wider">Synced</span>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4 mb-6">
-                                <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
-                                    <div class="text-[10px] text-slate-500 mb-1 uppercase">Matched</div>
-                                    <div class="text-lg font-bold text-slate-800">244</div>
-                                </div>
-                                <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
-                                    <div class="text-[10px] text-slate-500 mb-1 uppercase">Credit</div>
-                                    <div class="text-lg font-bold text-slate-800">62</div>
-                                </div>
-                                <div class="p-3 rounded-lg bg-red-50 border border-red-100">
-                                    <div class="text-[10px] text-red-500 mb-1 uppercase">Issues</div>
-                                    <div class="text-lg font-bold text-red-600">159</div>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="p-2 rounded bg-emerald-50 border border-emerald-100 flex items-center justify-between text-xs">
-                                    <span class="text-slate-700 truncate mr-2">FTR2026000001044</span>
-                                    <span class="text-emerald-600 font-medium">✓ Compatible</span>
-                                </div>
-                                <div class="p-2 rounded bg-amber-50 border border-amber-100 flex items-center justify-between text-xs">
-                                    <span class="text-slate-700 truncate mr-2">FTR2026000001066</span>
-                                    <span class="text-amber-600 font-medium">⚠ Withholding</span>
-                                </div>
-                                <div class="p-2 rounded bg-red-50 border border-red-100 flex items-center justify-between text-xs">
-                                    <span class="text-slate-700 truncate mr-2">FTR2026000001011</span>
-                                    <span class="text-red-600 font-medium">✖ Mismatch</span>
-                                </div>
-                                <div class="p-2 rounded bg-slate-100 border border-slate-200 flex items-center justify-between text-xs">
-                                    <span class="text-slate-700 truncate mr-2">FTR2026000001033</span>
-                                    <span class="text-slate-400 font-medium">? Missing</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Cross-check invoices against the ledger in one click</h1>
+      <p class="lead">It compares your e-Invoice archive with ledger records line by line
+        and puts every VAT mismatch, missing receipt and duplicate in a color-coded table.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://github.com/ArdaEkiz0/kdv-capraz-kontrol/releases/latest">
+          Download <span id="surum-rozet" class="ver"></span>
+        </a>
+        <a class="btn btn-ghost" href="#nasil">How does it work?</a>
+      </div>
+      <p class="meta"><b>Windows 10/11</b> · single file, no install · <b>15-day free demo</b> · <span id="surum-metni">latest version</span></p>
+    </div>
+    <div>
+      <img class="shot" src="ekran-uygulama.png" width="1898" height="1047"
+        alt="KDV Cross-Check main window: invoice and ledger folders selected, result table and summary cards filled in">
+    </div>
+  </div>
+</section>
 
-    <!-- Pain Areas -->
-    <section class="py-20 bg-slate-900 text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Stress of Manual Checks</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Traditional methods are no longer sufficient for accurate and timely reconciliation.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-800 border border-slate-700 group hover:border-amber-500 transition-all">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="clock" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Hours of Manual Work</h3>
-                    <p class="text-slate-400 leading-relaxed">Manually verifying thousands of rows is exhausting and prone to systemic failure.</p>
-                </div>
-                <div class="p-8 rounded-2xl bg-slate-800 border border-slate-700 group hover:border-red-500 transition-all">
-                    <div class="w-12 h-12 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Critical Overlooks</h3>
-                    <p class="text-slate-400 leading-relaxed">Small errors caused by fatigue lead to massive discrepancies at the close of the period.</p>
-                </div>
-                <div class="p-8 rounded-2xl bg-slate-800 border border-slate-700 group hover:border-indigo-500 transition-all">
-                    <div class="w-12 h-12 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="zap-off" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Inefficient Pipeline</h3>
-                    <p class="text-slate-400 leading-relaxed">Lose countless hours attempting to unify fragmented formats (Excel, PDF, XML).</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="band" id="ekran">
+  <div class="wrap">
+    <h2>Every discrepancy in one table</h2>
+    <p>Which invoice is missing from the ledger, which record understates the VAT, which tax ID is off by one digit —
+      when the check finishes, it is all there row by row. Jump straight to the problems with the filters.</p>
+    <div class="frame">
+      <img src="ekran-tablo.png" width="1853" height="398" alt="Result table: MATCHED, AMOUNT MISMATCH, TAX-ID MISMATCH and NOT IN INVOICES shown as colored rows">
+    </div>
+    <div class="legend">
+      <span class="chip chip-y">MATCHED</span>
+      <span class="chip chip-k">AMOUNT MISMATCH</span>
+      <span class="chip chip-s">TAX-ID MISMATCH</span>
+      <span class="chip chip-k">MISSING FROM LEDGER</span>
+      <span class="chip chip-k">NOT IN INVOICES</span>
+    </div>
+  </div>
+</section>
 
-    <!-- Solutions/Benefits -->
-    <section id="features" class="py-24 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Zero-Error Reconciliation</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">A professional toolkit transforming chaotic data into actionable insights.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
-                <div class="order-2 md:order-1">
-                    <div class="p-4 rounded-3xl bg-indigo-100 border border-indigo-200 shadow-inner">
-                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="rounded-2xl shadow-lg" alt="Analysis View">
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold mb-4">
-                        <i data-lucide="cpu" class="w-6 h-6"></i>
-                        <span>Smart Matching Algorithm</span>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4 text-slate-900">Find Exactly Where the Mistake Is.</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg mb-6">
-                        It validates not just amounts, but document numbers and dates, directing you only to the discrepancies. Catches incorrect rates instantly.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check" class="w-5 h-5 text-emerald-500"></i>
-                            Mathematical VAT verification
-                        </li>
-                        <li class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check" class="w-5 h-5 text-emerald-500"></i>
-                            Direct alignment with journal records
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<section class="pad" id="nasil">
+  <div class="wrap">
+    <h2 class="sec">Done in four steps</h2>
+    <p class="sec">No separate install, no database, no internet required. Point at the folders, start the check.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Pick the folders</h3>
+        <p>Point to your invoice folder and your ledger / control-sheet file. XML, Excel, PDF and zip may be mixed.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Start the check</h3>
+        <p>The app reads the invoices, merges duplicates and matches them against ledger records by tax ID and document number.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Review the gaps</h3>
+        <p>Read the type and reason of every discrepancy in the colored table; click a row to see the side-by-side detail.</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>Export the report</h3>
+        <p>Save the result as Excel or PDF and file it before filing your VAT return.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
-                <div>
-                    <div class="flex items-center gap-3 text-indigo-600 font-bold mb-4">
-                        <i data-lucide="file-json" class="w-6 h-6"></i>
-                        <span>Universal Format Reading</span>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4 text-slate-900">Any File, Any Source, Instant Result.</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg mb-6">
-                        Automatically parses XML, PDF, or Excel without exception. Completely eliminates the need for tedious manual data entry.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check" class="w-5 h-5 text-emerald-500"></i>
-                            Full UBL XML compliance
-                        </li>
-                        <li class="flex items-center gap-2 text-slate-700">
-                            <i data-lucide="check" class="w-5 h-5 text-emerald-500"></i>
-                            Advanced Journal Slip parsing
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-indigo-600 rounded-3xl p-8 text-white shadow-2xl shadow-indigo-200 relative overflow-hidden">
-                     <div class="relative z-10">
-                        <h4 class="text-2xl font-bold mb-4">Efficiency Gap</h4>
-                        <div class="space-y-4">
-                            <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
-                                <div class="flex justify-between text-sm mb-2">
-                                    <span>Manual Audit</span>
-                                    <span class="text-red-300">~ 8 Hours</span>
-                                </div>
-                                <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-red-400 h-full w-full"></div>
-                                </div>
-                            </div>
-                            <div class="bg-white/20 p-4 rounded-xl backdrop-blur-sm border border-white/30 shadow-lg">
-                                <div class="flex justify-between text-sm mb-2">
-                                    <span class="font-bold">KDV Cross-Check</span>
-                                    <span class="text-emerald-300">~ 12 Seconds</span>
-                                </div>
-                                <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-emerald-400 h-full w-1"></div>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                     <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="pad" id="formatlar">
+  <div class="wrap">
+    <h2 class="sec">What can it read?</h2>
+    <p class="sec">No splitting or converting — one mixed folder is enough.</p>
+    <div class="fmt-row">
+      <span class="fmt">UBL e-Invoice <small>GİB .xml / .gzip</small></span>
+      <span class="fmt">Excel <small>.xlsx — receipt lists, ledgers, control sheets</small></span>
+      <span class="fmt">PDF <small>including scanned receipts</small></span>
+      <span class="fmt">ZIP <small>bundles / bulk archives</small></span>
+    </div>
+  </div>
+</section>
 
-    <!-- How it works -->
-    <section id="how-it-works" class="py-24 bg-slate-100 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple Four-Step Process</h2>
-                <p class="text-slate-600">Designed for clarity and speed, requiring zero learning curve.</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-8 relative">
-                <!-- Connector Line (Desktop Only) -->
-                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-200 z-0"></div>
-                
-                <div class="relative z-10 text-center group">
-                    <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">1</div>
-                    <h4 class="font-bold mb-2">Upload Data</h4>
-                    <p class="text-sm text-slate-500 px-4">Import your control sheets and digital documents into the app.</p>
-                </div>
-                <div class="relative z-10 text-center group">
-                    <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">2</div>
-                    <h4 class="font-bold mb-2">Auto-Analyze</h4>
-                    <p class="text-sm text-slate-500 px-4">Our algorithm scans thousands of records in mere milliseconds.</p>
-                </div>
-                <div class="relative z-10 text-center group">
-                    <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">3</div>
-                    <h4 class="font-bold mb-2">Filter Issues</h4>
-                    <p class="text-sm text-slate-500 px-4">Instantly isolate mismatched, duplicate, or missing entries.</p>
-                </div>
-                <div class="relative z-10 text-center group">
-                    <div class="w-16 h-16 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">4</div>
-                    <h4 class="font-bold mb-2">Export Report</h4>
-                    <p class="text-sm text-slate-500 px-4">Save a cleaned, reconciled list to Excel or PDF for filing.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="pad" id="lisans" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="sec">License</h2>
+    <p class="sec">Try the demo on your own data; get in touch for a license key if you like it.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Demo</h3>
+        <div class="fiyat">Free <small>· 15 days</small></div>
+        <ul>
+          <li>All features unlocked</li>
+          <li>Unlimited invoices and records</li>
+          <li>Excel / PDF export</li>
+          <li>No installation needed</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://github.com/ArdaEkiz0/kdv-capraz-kontrol/releases/latest">Download and try</a>
+      </div>
+      <div class="plan hone">
+        <h3>Annual License</h3>
+        <div class="fiyat">Single PC <small>· 1 year</small></div>
+        <ul>
+          <li>Key activates in one click</li>
+          <li>Automatic updates</li>
+          <li>Bulk fetch from the e-Invoice portal (GİB)</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn" href="mailto:ardaekiz72@gmail.com?subject=KDV%20Cross-Check%20-%20License">Email for price and activation</a>
+        <p style="margin:14px 0 0;color:var(--ikincil);font-size:14px">
+          Phone: <a href="tel:+905462083854" style="color:var(--metin)">+90 546 208 38 54</a> ·
+          <a href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- All Features -->
-    <section class="py-24 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">All Features</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Tools that speed up your daily work and keep you out of the details.</p>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="layers" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Multiple Format Support</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Process e-Invoice XML, PDF, MAHSUP slips, Excel and scanned documents in one program.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="git-compare" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Smart Matching</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Automatic cross-check by tax ID, invoice number and amount. Reduces manual workload.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="bar-chart-3" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Dashboard &amp; Charts</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Visual summaries with VAT distribution, monthly trends and KPI cards.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="mail" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Email Reports</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Send reports to your accountant in one click via Outlook or SMTP.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="refresh-cw" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Automatic Updates</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Checks for new versions automatically and updates with one click.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="database" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">History Database</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Store your check history and compare with previous periods.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="percent" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">VAT Rate Verification</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Verifies the mathematical consistency between the invoice's VAT rate and the ledger amount; catches invoices cut at the wrong rate.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="scale" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Withholding &amp; Credit Notes</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Compares withholding records against the ledger by rate; splits credit notes automatically.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md hover:border-indigo-200 transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4"><i data-lucide="file-check-2" class="w-5 h-5"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Declaration Comparison</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Compares two declaration period totals with your check results; shows VAT that did not reach the declaration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="pad" id="sss" style="background:var(--zemin2);border-top:1px solid var(--border)">
+  <div class="wrap">
+    <h2 class="sec">FAQ</h2>
+    <div class="faq">
+      <details>
+        <summary>Is the demo limited?</summary>
+        <p>No. You get every feature and unlimited files for 15 days; the app only asks for a license once the period ends.</p>
+      </details>
+      <details>
+        <summary>Do my invoices leave my computer?</summary>
+        <p>No. All comparison happens locally. Apart from license verification, the app never sends any data anywhere.</p>
+      </details>
+      <details>
+        <summary>Will my Excel export from the accounting software work?</summary>
+        <p>Yes. Column matching is automatic for Luca, Logo and standard accounting outputs; for an unusual template you map it once and it is remembered for later periods.</p>
+      </details>
+      <details>
+        <summary>Can I run several periods at once?</summary>
+        <p>Yes. Feed it a yearly trial balance or a multi-period sheet; results can also be filtered and reported per period.</p>
+      </details>
+      <details>
+        <summary>Can the license move to another computer?</summary>
+        <p>A key is bound to one machine; after a format or a new PC, email us and we transfer it.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
-    <!-- Supported Formats -->
-    <section id="formats" class="py-24 px-4 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Broad Industry Compatibility</h2>
-                <p class="text-slate-600">Engineered to recognize almost every common accounting format.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:shadow-md transition-all benefit-card">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="file-text"></i></div>
-                    <h5 class="font-bold text-slate-800">e-Invoice XML</h5>
-                    <p class="text-xs text-slate-500 mt-2">UBL Standard</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:shadow-md transition-all benefit-card">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="file-digit"></i></div>
-                    <h5 class="font-bold text-slate-800">Journal Slips</h5>
-                    <p class="text-xs text-slate-500 mt-2">PDF Format</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:shadow-md transition-all benefit-card">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="table"></i></div>
-                    <h5 class="font-bold text-slate-800">Excel Ledgers</h5>
-                    <p class="text-xs text-slate-500 mt-2">XLS/XLSX</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center hover:shadow-md transition-all benefit-card">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="file-type"></i></div>
-                    <h5 class="font-bold text-slate-800">System Prints</h5>
-                    <p class="text-xs text-slate-500 mt-2">Various PDF outputs</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+  <div class="wrap">
+    <a class="mark" href="."><img src="logo.png" alt=""> KDV Cross-Check</a>
+    <span>Developer: Arda M. Ekiz · <span id="yil"></span></span>
+    <span class="spacer"></span>
+    <a href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>
+    <a href="tel:+905462083854">+90 546 208 38 54</a>
+    <a href="https://github.com/ArdaEkiz0/kdv-capraz-kontrol">GitHub</a>
+    <a href="index.html">Türkçe</a>
+  </div>
+</footer>
 
-    <!-- Pricing -->
-    <section id="pricing" class="py-24 px-4 bg-slate-50">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Transparent Licensing</h2>
-                <p class="text-slate-600">Choose the path that fits your practice.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Free Trial -->
-                <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all relative overflow-hidden">
-                    <h3 class="text-xl font-bold mb-2">Free Starter</h3>
-                    <div class="text-4xl font-black mb-6">$0 <span class="text-sm font-normal text-slate-400">/ first 15 days</span></div>
-                    <ul class="space-y-4 mb-8 text-slate-600">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> Full access to all features</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> Basic technical support</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> No credit card required</li>
-                    </ul>
-                    <a href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" class="block text-center py-4 bg-slate-100 text-slate-800 rounded-xl font-bold hover:bg-slate-200 transition-all">Try Now</a>
-                </div>
-                <!-- Paid Plan -->
-                <div class="p-8 rounded-3xl bg-white border-2 border-indigo-600 shadow-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-indigo-600 text-white px-4 py-1 text-xs font-bold rounded-bl-xl">RECOMMENDED</div>
-                    <h3 class="text-xl font-bold mb-2">Professional Plan</h3>
-                    <div class="text-4xl font-black mb-6">Annual Subscription</div>
-                    <ul class="space-y-4 mb-8 text-slate-600">
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> Unlimited document uploads</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> Priority technical assistance</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> Licensed for 1 Computer</li>
-                        <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500"></i> Offline capability included</li>
-                    </ul>
-                    <a href="mailto:ardaekiz72@gmail.com?subject=KDV%20Cross-Check%20-%20Annual%20License" class="block text-center py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">Subscribe Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+fetch("https://api.github.com/repos/ArdaEkiz0/kdv-capraz-kontrol/releases/latest")
+  .then(function (r) { return r.json(); })
+  .then(function (d) {
+    if (d && d.tag_name) {
+      document.getElementById("surum-rozet").textContent = d.tag_name;
+      document.getElementById("surum-metni").textContent = "latest " + d.tag_name;
+    }
+  })
+  .catch(function () {});
+document.getElementById("yil").textContent = new Date().getFullYear();
+</script>
 
-    <!-- Final CTA -->
-    <section class="py-20 px-4 text-center bg-indigo-600 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/></pattern></defs>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
-        </div>
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <h2 class="text-4xl font-extrabold mb-6">There is no room for error in accounting.</h2>
-            <p class="text-indigo-100 text-lg mb-10 opacity-90">Start today and feel the power of total control.</p>
-            <a id="footer-dl-btn" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" class="px-10 py-5 bg-white text-indigo-600 rounded-2xl font-black text-xl shadow-2xl hover:bg-slate-50 transition-all hover:scale-105 flex items-center gap-3 mx-auto w-fit">
-                <i data-lucide="rocket" class="w-6 h-6"></i>
-                Create My Account →
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 px-4 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-2">
-                <img src="logo.png" alt="Logo" class="w-6 h-6 grayscale opacity-50">
-                <span class="text-sm font-bold text-slate-400">&copy; 2026 Arda M. Ekiz. All rights reserved.</span>
-            </div>
-            <div class="flex gap-6 text-slate-400 text-sm">
-                <a href="https://www.linkedin.com/in/arda-mehmet-ekiz-107640333/" class="hover:text-indigo-600 transition-colors">LinkedIn</a>
-                <a href="https://www.instagram.com/ardaaekiz/" class="hover:text-indigo-600 transition-colors">Instagram</a>
-                <a href="tel:+905462083854" class="hover:text-indigo-600 transition-colors">+90 546 208 38 54</a>
-                <a href="mailto:ardaekiz72@gmail.com" class="hover:text-indigo-600 transition-colors">Email</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Version Fetching Logic (Maintain DynamicUpdating)
-        async function updateVersion() {
-            try {
-                const res = await fetch('https://api.github.com/repos/ArdaEkiz0/kdv-indir/releases/latest');
-                const data = await res.json();
-                const version = data.tag_name.replace('v', '');
-                const vt = document.getElementById('version-tag');
-                if(vt) vt.innerText = 'v' + version;
-            } catch (e) {
-                console.error("Version fetch failed");
-            }
-        }
-        updateVersion();
-
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        if(menuBtn && menu) {
-            menuBtn.onclick = () => menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
