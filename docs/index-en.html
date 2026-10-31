@@ -1,201 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KDV Cross-Check — match e-Invoices against your ledger in seconds</title>
-<meta name="description" content="KDV Cross-Check compares your e-Invoice/XML/PDF archive with ledger and control-sheet records line by line, and shows VAT mismatches, missing and duplicated entries in one color-coded table.">
-<link rel="canonical" href="https://ardaekiz0.github.io/kdv-indir/index-en.html">
-<link rel="alternate" hreflang="en" href="https://ardaekiz0.github.io/kdv-indir/index-en.html">
-<link rel="alternate" hreflang="tr" href="https://ardaekiz0.github.io/kdv-indir/">
-<link rel="icon" href="logo.png" type="image/png">
+<title>KDV Çapraz Kontrol — Cross-check sales invoices against e-Invoice records</title>
+<meta name="description" content="A Windows desktop application that compares your sales invoices against e-Invoice records and lists missing, incorrect and duplicated VAT entries together with their result.">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap">
-    <a class="mark" href="."><img src="logo.png" alt="KDV Cross-Check logo"> KDV Cross-Check</a>
-    <nav class="topnav">
-      <a href="#nasil">How it works</a>
-      <a href="#ekran">Screenshots</a>
-      <a href="#formatlar">Formats</a>
-      <a href="#lisans">License</a>
-      <a href="#sss">FAQ</a>
-    </nav>
-    <a class="lang" href="index.html">TR</a>
-    <a class="btn btn-sm" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">Download</a>
-  </div>
+<header class="wrap">
+  <nav class="nav" aria-label="Main menu">
+    <a class="nav__mark link" href="#top">KDV Çapraz Kontrol</a>
+    <div class="nav__links">
+      <a class="link" href="#how">How it works</a>
+      <a class="link hide-phone" href="#outputs">Outputs</a>
+      <a class="link hide-phone" href="#comparison">Comparison</a>
+      <a class="link" href="#license">License</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="link" href="index.html" lang="tr">Türkçe</a>
+    </div>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <h1>Cross-check invoices against the ledger in one click</h1>
-      <p class="lead">It compares your e-Invoice archive with ledger records line by line
-        and puts every VAT mismatch, missing receipt and duplicate in a color-coded table.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">
-          Download <span id="surum-rozet" class="ver"></span>
-        </a>
-        <a class="btn btn-ghost" href="#nasil">How does it work?</a>
-      </div>
-      <p class="meta"><b>Windows 10/11</b> · single file, no install · <b>15-day free demo</b> · <span id="surum-metni">latest version</span></p>
-    </div>
-    <div>
-      <img class="shot" src="ekran-uygulama.png" width="1898" height="1047"
-        alt="KDV Cross-Check main window: invoice and ledger folders selected, result table and summary cards filled in">
-    </div>
-  </div>
-</section>
+<main id="top">
 
-<section class="band" id="ekran">
-  <div class="wrap">
-    <h2>Every discrepancy in one table</h2>
-    <p>Which invoice is missing from the ledger, which record understates the VAT, which tax ID is off by one digit —
-      when the check finishes, it is all there row by row. Jump straight to the problems with the filters.</p>
-    <div class="frame">
-      <img src="ekran-tablo.png" width="1853" height="398" alt="Result table: MATCHED, AMOUNT MISMATCH, TAX-ID MISMATCH and NOT IN INVOICES shown as colored rows">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__inner wrap">
+      <div class="hero__copy">
+        <h1 class="display lines">
+          <span class="line"><span data-line style="--i:0">Leave no VAT</span></span>
+          <span class="line"><span data-line style="--i:1">difference.</span></span>
+        </h1>
+        <p class="lead" data-rise style="--i:3">It compares sales invoices against e-Invoice records and lists every missing and duplicated VAT entry.</p>
+        <div class="hero__actions" data-rise style="--i:4">
+          <a class="button" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" data-press>Download for free</a>
+          <a class="link" href="#how">How it works?</a>
+        </div>
+        <p class="hero__meta small muted" data-rise style="--i:5">Runs on Windows 10 and 11 · No installation · Free trial</p>
+      </div>
     </div>
-    <div class="legend">
-      <span class="chip chip-y">MATCHED</span>
-      <span class="chip chip-k">AMOUNT MISMATCH</span>
-      <span class="chip chip-s">TAX-ID MISMATCH</span>
-      <span class="chip chip-k">MISSING FROM LEDGER</span>
-      <span class="chip chip-k">NOT IN INVOICES</span>
+    <div class="hero__stage" data-scene data-fragment="ledger" aria-label="Live cross-check scene">
+      <p class="hero__stage-note">Live comparison</p>
+      <div class="hero__fragment">
+        <div class="ui" data-ui="ledger">
+          <div class="ui__bar">
+            <span class="ui__title">Cross-check</span>
+            <span class="ui__meta">72 records</span>
+          </div>
+          <div class="ui__toolbar">
+            <span class="chip chip--flag">2 unmatched</span>
+            <span class="chip chip--ghost">1 missing in e-Invoice</span>
+            <span class="chip chip--ghost">1 duplicate</span>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Invoice no</th><th class="num">Amount</th><th class="num">VAT</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>SF-2025-0014</td><td class="num">38,400.00</td><td class="num">7,680.00</td><td><span class="chip">Matched</span></td></tr>
+              <tr class="is-flagged"><td>SF-2025-0015</td><td class="num">25,900.00</td><td class="num">5,180.00</td><td><span class="chip chip--flag">Amount mismatch</span></td></tr>
+              <tr class="is-ghost"><td>SF-2025-0016</td><td class="num">18,500.00</td><td class="num">3,700.00</td><td><span class="chip chip--ghost">Not in e-Invoice</span></td></tr>
+              <tr><td>SF-2025-0017</td><td class="num">18,500.00</td><td class="num">3,700.00</td><td><span class="chip">Matched</span></td></tr>
+              <tr class="is-open"><td>SF-2025-0018</td><td class="num">18,500.00</td><td class="num">3,700.00</td><td><span class="chip chip--flag">Duplicate</span></td></tr>
+              <tr><td>SF-2025-0019</td><td class="num">41,250.00</td><td class="num">8,250.00</td><td><span class="chip">Matched</span></td></tr>
+              <tr class="is-flagged" id="js-fark-satir"><td>SF-2025-0020</td><td class="num">51,200.00</td><td class="num"><input class="editcell" id="js-fark-tutar" value="10,900.00" data-expected="10240" inputmode="decimal" aria-label="VAT amount, editable"></td><td><span class="chip chip--flag" id="js-fark-durum" data-ok="Matched" data-flag="VAT mismatch">VAT mismatch</span></td></tr>
+            </tbody>
+          </table>
+          <div class="ui__foot">
+            <span class="ui__dev"><span class="devbar"><i id="js-fark-cubuk"></i></span><span id="js-fark-metin" data-ok-text="No difference" data-flag-text="VAT difference: {n}">VAT difference: 660.00</span></span>
+            <span class="nums">69 of 72 records matched</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="nasil">
-  <div class="wrap">
-    <h2 class="sec">Done in four steps</h2>
-    <p class="sec">No separate install, no database, no internet required. Point at the folders, start the check.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="n">1</div>
-        <h3>Pick the folders</h3>
-        <p>Point to your invoice folder and your ledger / control-sheet file. XML, Excel, PDF and zip may be mixed.</p>
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="section runin wrap" id="how">
+    <div class="runin__col">
+      <h2 class="head">Three files. One check.</h2>
+      <p class="run" data-reveal><b>Load.</b> Choose your sales invoices and e-Invoice records; add the previous period report for a period-over-period comparison. The program matches records by invoice number, date, amount and VAT.</p>
+      <p class="run" data-reveal><b>Review.</b> The result screen shows the match status next to every row: matched, amount mismatch, VAT mismatch, duplicate, not in e-Invoice, extra in e-Invoice. You can correct the VAT rate and amount right in the table.</p>
+      <div class="runin__stage runin__frames" data-reveal>
+        <figure class="shot shutter" data-reveal>
+          <img src="ekran-uygulama.png" alt="KDV Çapraz Kontrol application: records list on the left, comparison results on the right" width="1898" height="1047" loading="lazy">
+        </figure>
+        <figure class="shot shutter" data-reveal>
+          <img src="ekran-tablo.png" alt="Result table with status colours and editable VAT cells" width="1853" height="398" loading="lazy">
+        </figure>
+        <figure class="shot shutter" data-reveal>
+          <img src="ekran-uygulama.png" alt="Report editing screen" width="1898" height="1047" loading="lazy">
+        </figure>
       </div>
-      <div class="step">
-        <div class="n">2</div>
-        <h3>Start the check</h3>
-        <p>The app reads the invoices, merges duplicates and matches them against ledger records by tax ID and document number.</p>
+      <p class="run" data-reveal><b>Save.</b> Export the report as Excel, PDF or a printable output and fill in your VAT return from this table. Next period, new records are flagged automatically against the previous period report.</p>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCT SCENE (three.js) ================= -->
+  <section class="section scene wrap" id="scene" data-scene data-fragment="cross">
+    <div class="scene__grid">
+      <div class="scene__steps">
+        <div class="scene__step">
+          <h3>Invoices are matched</h3>
+          <p>Sales invoice rows are matched to e-Invoice records by number and amount.</p>
+        </div>
+        <div class="scene__step">
+          <h3>Differences are flagged</h3>
+          <p>Rows whose amount or VAT does not match are coloured together with the field that differs.</p>
+        </div>
+        <div class="scene__step">
+          <h3>Into the record</h3>
+          <p>Every row gets its result; you carry the results straight into the report.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="n">3</div>
-        <h3>Review the gaps</h3>
-        <p>Read the type and reason of every discrepancy in the colored table; click a row to see the side-by-side detail.</p>
-      </div>
-      <div class="step">
-        <div class="n">4</div>
-        <h3>Export the report</h3>
-        <p>Save the result as Excel or PDF and file it before filing your VAT return.</p>
+      <div class="scene__stage">
+        <canvas id="cross-scene" aria-hidden="true"></canvas>
+        <div class="scene__legend" aria-hidden="true">
+          <span><i></i> Matched</span>
+          <span><i></i> Different</span>
+          <span><i class="dash"></i> Missing record</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="formatlar">
-  <div class="wrap">
-    <h2 class="sec">What can it read?</h2>
-    <p class="sec">No splitting or converting — one mixed folder is enough.</p>
-    <div class="fmt-row">
-      <span class="fmt">UBL e-Invoice <small>GİB .xml / .gzip</small></span>
-      <span class="fmt">Excel <small>.xlsx — receipt lists, ledgers, control sheets</small></span>
-      <span class="fmt">PDF <small>including scanned receipts</small></span>
-      <span class="fmt">ZIP <small>bundles / bulk archives</small></span>
+  <!-- ================= OUTPUTS ================= -->
+  <section class="section showcase wrap" id="outputs">
+    <div class="showcase__grid">
+      <div class="showcase__names">
+        <button type="button" data-target="pane-sonuc" aria-pressed="true">Result</button>
+        <button type="button" data-target="pane-arsiv" aria-pressed="false">Archive</button>
+        <button type="button" data-target="pane-mukerrer" aria-pressed="false">Duplicates</button>
+        <button type="button" data-target="pane-donem" aria-pressed="false">Period</button>
+        <p class="muted">Working screens, not an Excel template or a folder: the check itself.</p>
+      </div>
+      <div class="showcase__stage">
+        <div class="showcase__pane is-on" id="pane-sonuc">
+          <figure class="shot shutter" data-reveal>
+            <img src="ekran-uygulama.png" alt="Application window: file and filter panel on the left, records table in the middle, comparison summary on the right" width="1898" height="1047" loading="lazy">
+            <figcaption class="caption small">The application window: records table and comparison summary.</figcaption>
+          </figure>
+          <figure class="shot shutter" data-reveal>
+            <img src="ekran-tablo.png" alt="Result table with coloured status column, editable VAT cells and totals" width="1853" height="398" loading="lazy">
+            <figcaption class="caption small">The result table: coloured status column, editable VAT cells and totals.</figcaption>
+          </figure>
+        </div>
+        <div class="showcase__pane" id="pane-arsiv">
+          <figure class="shot">
+            <img src="ekran-uygulama.png" alt="Archiving screen" width="1898" height="1047" loading="lazy">
+            <figcaption class="caption small">Checked records move into the period archive.</figcaption>
+          </figure>
+        </div>
+        <div class="showcase__pane" id="pane-mukerrer">
+          <figure class="shot">
+            <img src="ekran-tablo.png" alt="Duplicate invoice list" width="1853" height="398" loading="lazy">
+            <figcaption class="caption small">Rows where the same invoice was processed twice, in a single list.</figcaption>
+          </figure>
+        </div>
+        <div class="showcase__pane" id="pane-donem">
+          <div class="sheet">
+            <h4>Period comparison</h4>
+            <dl>
+              <div class="row"><span>2025 03.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 04.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 05.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 06.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 07.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 08.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 09.</span><span class="nums">0.00</span></div>
+              <div class="row"><span>2025 10.</span><span class="nums">0.00</span></div>
+            </dl>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="lisans" style="padding-top:0">
-  <div class="wrap">
-    <h2 class="sec">License</h2>
-    <p class="sec">Try the demo on your own data; get in touch for a license key if you like it.</p>
-    <div class="plans">
+  <!-- ================= COMPARISON ================= -->
+  <section class="section wrap" id="comparison">
+    <div class="compare">
+      <div class="compare__head">
+        <h2>How is the check done?</h2>
+        <div class="compare__col compare__col--us">KDV Çapraz Kontrol</div>
+        <div class="compare__col">Manual review</div>
+        <div class="compare__col">Result</div>
+      </div>
+      <div class="compare__rows">
+        <div class="compare__row">
+          <div class="name">Speed</div>
+          <div class="us"><span>About 1 minute</span></div>
+          <div class="lab">Hours</div>
+          <div class="lab">100 records</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Accuracy</div>
+          <div class="us"><span>Constant</span></div>
+          <div class="lab">Depends on the person</div>
+          <div class="lab">Every time</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Result</div>
+          <div class="us"><span>Row by row</span></div>
+          <div class="lab">Grand total</div>
+          <div class="lab">Row by row</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Report</div>
+          <div class="us"><span>Automatic</span></div>
+          <div class="lab">Written by hand</div>
+          <div class="lab">Ready</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Duplicates</div>
+          <div class="us"><span>Flagged</span></div>
+          <div class="lab">Easily missed</div>
+          <div class="lab">Listed</div>
+        </div>
+      </div>
+    </div>
+    <div class="proof">
+      <div class="proof__intro">
+        <p><b>Who it is for</b></p>
+        <p class="muted">Certified public accountants · Bookkeeping teams · Independent accountants</p>
+      </div>
+      <ul>
+        <li>Audit trail</li>
+        <li>Excel export</li>
+        <li>Local install</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= LICENSE ================= -->
+  <section class="section wrap" id="license">
+    <h2 class="head" style="margin-bottom: 2.5rem">One-time licence, unlimited use.</h2>
+    <div class="plans__grid">
       <div class="plan">
-        <h3>Demo</h3>
-        <div class="fiyat">Free <small>· 15 days</small></div>
-        <ul>
-          <li>All features unlocked</li>
-          <li>Unlimited invoices and records</li>
-          <li>Excel / PDF export</li>
-          <li>No installation needed</li>
-        </ul>
-        <a class="btn btn-ghost" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">Download and try</a>
+        <div>
+          <h3 class="plans__figure">₺750 <span class="plans__period">/ 6 months</span></h3>
+          <p class="muted" style="margin-top: 1rem">Unlimited use for six months, including all updates.</p>
+        </div>
+        <p class="small muted">Prepared for accountants and businesses under the Turkish Commercial Code No. 6102 and the Tax Procedure Law.</p>
+        <a class="button" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" data-press>Download for free</a>
       </div>
-      <div class="plan hone">
-        <h3>Annual License</h3>
-        <div class="fiyat">Single PC <small>· 1 year</small></div>
-        <ul>
-          <li>Key activates in one click</li>
-          <li>Automatic updates</li>
-          <li>Bulk fetch from the e-Invoice portal (GİB)</li>
-          <li>Email support</li>
-        </ul>
-        <a class="btn" href="mailto:ardaekiz72@gmail.com?subject=KDV%20Cross-Check%20-%20License">Email for price and activation</a>
-        <p style="margin:14px 0 0;color:var(--ikincil);font-size:14px">
-          Phone: <a href="tel:+905462083854" style="color:var(--metin)">+90 546 208 38 54</a> ·
-          <a href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>
-        </p>
+      <div class="plan">
+        <div>
+          <h3 class="plans__figure">₺1,200 <span class="plans__period">/ 12 months</span></h3>
+          <p class="muted" style="margin-top: 1rem">Unlimited use for a full year, including all updates.</p>
+        </div>
+        <p class="small muted">The program runs locally; your records never leave your computer. All features are open during the trial.</p>
+        <a class="button button--quiet" href="#contact" data-press>Get a licence</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="sss" style="background:var(--zemin2);border-top:1px solid var(--border)">
-  <div class="wrap">
-    <h2 class="sec">FAQ</h2>
-    <div class="faq">
-      <details>
-        <summary>Is the demo limited?</summary>
-        <p>No. You get every feature and unlimited files for 15 days; the app only asks for a license once the period ends.</p>
-      </details>
-      <details>
-        <summary>Do my invoices leave my computer?</summary>
-        <p>No. All comparison happens locally. Apart from license verification, the app never sends any data anywhere.</p>
-      </details>
-      <details>
-        <summary>Will my Excel export from the accounting software work?</summary>
-        <p>Yes. Column matching is automatic for Luca, Logo and standard accounting outputs; for an unusual template you map it once and it is remembered for later periods.</p>
-      </details>
-      <details>
-        <summary>Can I run several periods at once?</summary>
-        <p>Yes. Feed it a yearly trial balance or a multi-period sheet; results can also be filtered and reported per period.</p>
-      </details>
-      <details>
-        <summary>Can the license move to another computer?</summary>
-        <p>A key is bound to one machine; after a format or a new PC, email us and we transfer it.</p>
-      </details>
+  <!-- ================= FAQ ================= -->
+  <section class="section faq wrap" id="faq">
+    <div class="faq__grid">
+      <h2>Frequently asked</h2>
+      <div class="faq__list">
+        <details>
+          <summary>Does my data leave the computer?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>No. The program runs locally; your invoices and reports never leave your computer.</p></div>
+        </details>
+        <details>
+          <summary>Which files can I load?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Sales invoices, e-Invoice records and previous period reports in Excel and CSV formats.</p></div>
+        </details>
+        <details>
+          <summary>Does it need installation?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>No. It runs on Windows 10 and 11 and opens directly after the download.</p></div>
+        </details>
+        <details>
+          <summary>What happens when the licence expires?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>The program keeps working; new version updates apply throughout the licence period.</p></div>
+        </details>
+        <details>
+          <summary>Is there a trial?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Yes. Download the program and try it without limits.</p></div>
+        </details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <a class="mark" href="."><img src="logo.png" alt=""> KDV Cross-Check</a>
-    <span>Developer: Arda M. Ekiz · <span id="yil"></span></span>
-    <span class="spacer"></span>
-    <a href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>
-    <a href="tel:+905462083854">+90 546 208 38 54</a>
-    <a href="https://github.com/ArdaEkiz0/kdv-indir">GitHub</a>
-    <a href="index.html">Türkçe</a>
-  </div>
+  <!-- ================= CTA ================= -->
+  <section class="cta">
+    <div class="cta__grid wrap">
+      <h2>Run your first check today.</h2>
+      <div class="cta__side">
+        <p>Download the program and try it for free; when you are ready, use it without limits under a one-time licence.</p>
+        <a class="button button--stage" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" data-press>Download for free</a>
+        <a class="link" href="#contact">Write to us about licences and questions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact wrap" id="contact">
+    <div class="contact__grid">
+      <div class="contact__col">
+        <p class="contact__prompt"><span>Do you have a question?</span><span class="soft">Write to us about licences and questions.</span></p>
+        <form class="contact__form" action="mailto:ardaekiz72@gmail.com" method="post" enctype="text/plain" data-subject="KDV Çapraz Kontrol — licence and questions">
+          <div class="contact__field">
+            <label class="sr-only" for="email">Your e-mail address</label>
+            <input class="field" id="email" name="email" type="email" placeholder="Your e-mail address" required>
+            <button class="contact__send" type="submit" aria-label="Send">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <p class="contact__next small muted">Pressing Send opens your e-mail application.</p>
+        </form>
+      </div>
+      <dl class="contact__rows">
+        <div><dt>Phone</dt><dd><a class="link" href="tel:+905462083854">+90 546 208 38 54</a></dd></div>
+        <div><dt>E-mail</dt><dd><a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a></dd></div>
+        <div><dt>Version</dt><dd class="nums">v3.1.64</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <nav aria-label="Footer menu">
+    <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">Download</a>
+    <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir">GitHub</a>
+    <a class="link" href="#contact">Support</a>
+    <a class="link" href="#faq">Licence</a>
+    <a class="link" href="index.html" lang="tr">Türkçe</a>
+  </nav>
+  <span class="muted">© 2025 Arda Ekiz</span>
+  <span class="end"><a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">Download · v3.1.64</a></span>
 </footer>
 
-<script>
-fetch("https://api.github.com/repos/ArdaEkiz0/kdv-indir/releases/latest")
-  .then(function (r) { return r.json(); })
-  .then(function (d) {
-    if (d && d.tag_name) {
-      document.getElementById("surum-rozet").textContent = d.tag_name;
-      document.getElementById("surum-metni").textContent = "latest " + d.tag_name;
-    }
-  })
-  .catch(function () {});
-document.getElementById("yil").textContent = new Date().getFullYear();
-</script>
-
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="scene.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

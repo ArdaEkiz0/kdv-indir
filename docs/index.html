@@ -1,201 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KDV Çapraz Kontrol — e-Fatura ve muavin kayıtlarını saniyeler içinde karşılaştırın</title>
-<meta name="description" content="KDV Çapraz Kontrol, e-Fatura/XML/PDF faturalarınızı muavin ve kontrol cetveli kayıtlarıyla satır satır karşılaştırır; KDV tutarsızlıklarını, eksik ve mükerrer kayıtları tek tabloda gösterir.">
-<link rel="canonical" href="https://ardaekiz0.github.io/kdv-indir/">
-<link rel="alternate" hreflang="tr" href="https://ardaekiz0.github.io/kdv-indir/">
-<link rel="alternate" hreflang="en" href="https://ardaekiz0.github.io/kdv-indir/index-en.html">
-<link rel="icon" href="logo.png" type="image/png">
+<title>KDV Çapraz Kontrol — Satış faturası ile e-Fatura karşılaştırma programı</title>
+<meta name="description" content="Satış faturalarınızı e-Fatura kayıtlarıyla karşılaştırır; eksik, hatalı ve mükerrer KDV kayıtlarını sonucuyla birlikte listeleyen Windows masaüstü uygulaması.">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap">
-    <a class="mark" href="."><img src="logo.png" alt="KDV Çapraz Kontrol logosu"> KDV Çapraz Kontrol</a>
-    <nav class="topnav">
-      <a href="#nasil">Nasıl çalışır</a>
-      <a href="#ekran">Ekran</a>
-      <a href="#formatlar">Formatlar</a>
-      <a href="#lisans">Lisans</a>
-      <a href="#sss">SSS</a>
-    </nav>
-    <a class="lang" href="index-en.html">EN</a>
-    <a class="btn btn-sm" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">İndir</a>
-  </div>
+<header class="wrap">
+  <nav class="nav" aria-label="Ana menü">
+    <a class="nav__mark link" href="#ust">KDV Çapraz Kontrol</a>
+    <div class="nav__links">
+      <a class="link" href="#nasil">Nasıl çalışır</a>
+      <a class="link hide-phone" href="#ciktilar">Çıktılar</a>
+      <a class="link hide-phone" href="#karsilastirma">Karşılaştırma</a>
+      <a class="link" href="#lisans">Lisans</a>
+      <a class="link" href="#sss">SSS</a>
+      <a class="link" href="index-en.html" lang="en">English</a>
+    </div>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <h1>Fatura–muavin çapraz kontrolünü tek tıkla yapın</h1>
-      <p class="lead">e-Fatura arşiviniz ile muavin kayıtlarını satır satır karşılaştırır;
-        KDV tutarsızlığını, eksik fişi ve mükerrer kaydı renkli tabloda önünüze koyar.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">
-          İndir <span id="surum-rozet" class="ver"></span>
-        </a>
-        <a class="btn btn-ghost" href="#nasil">Nasıl çalışıyor?</a>
-      </div>
-      <p class="meta"><b>Windows 10/11</b> · kurulumsuz tek dosya · <b>15 gün ücretsiz demo</b> · <span id="surum-metni">son sürüm</span></p>
-    </div>
-    <div>
-      <img class="shot" src="ekran-uygulama.png" width="1898" height="1047"
-        alt="KDV Çapraz Kontrol ana ekranı: fatura ve muavin dosyaları seçilmiş, sonuç tablosu ve özet kartları dolu">
-    </div>
-  </div>
-</section>
+<main id="ust">
 
-<section class="band" id="ekran">
-  <div class="wrap">
-    <h2>Tüm farklar tek tabloda</h2>
-    <p>Hangi fatura muavinde yok, hangi kayıt KDV'yi eksik işlemiş, hangi VKN bir hane yanlış —
-      kontrolü bitirdiğinizde satır satır karşınızda. Filtrelerle doğrudan sorunluya atlayın.</p>
-    <div class="frame">
-      <img src="ekran-tablo.png" width="1853" height="398" alt="Sonuç tablosu: EŞLEŞTİ, TUTAR FARKI, VKN FARKI ve FATURALARDA YOK durumları renkli satırlar halinde">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__inner wrap">
+      <div class="hero__copy">
+        <h1 class="display lines">
+          <span class="line"><span data-line style="--i:0">KDV’de</span></span>
+          <span class="line"><span data-line style="--i:1">fark kalmasın.</span></span>
+        </h1>
+        <p class="lead" data-rise style="--i:3">Satış faturalarınızı e-Fatura kayıtlarıyla karşılaştırır; eksik ve mükerrer kayıtları listeler.</p>
+        <div class="hero__actions" data-rise style="--i:4">
+          <a class="button" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" data-press>Ücretsiz indir</a>
+          <a class="link" href="#nasil">Nasıl çalışır?</a>
+        </div>
+        <p class="hero__meta small muted" data-rise style="--i:5">Windows 10 ve 11’de çalışır · Kurulum gerektirmez · Ücretsiz deneme</p>
+      </div>
     </div>
-    <div class="legend">
-      <span class="chip chip-y">EŞLEŞTİ</span>
-      <span class="chip chip-k">TUTAR FARKI</span>
-      <span class="chip chip-s">VKN FARKI</span>
-      <span class="chip chip-k">MUAVİNDE YOK</span>
-      <span class="chip chip-k">FATURALARDA YOK</span>
+    <div class="hero__stage" data-scene data-fragment="ledger" aria-label="Gerçek zamanlı karşılaştırma sahnesi">
+      <p class="hero__stage-note">Canlı karşılaştırma</p>
+      <div class="hero__fragment">
+        <div class="ui" data-ui="ledger">
+          <div class="ui__bar">
+            <span class="ui__title">Çapraz kontrol</span>
+            <span class="ui__meta">72 kayıt</span>
+          </div>
+          <div class="ui__toolbar">
+            <span class="chip chip--flag">2 eşleşmedi</span>
+            <span class="chip chip--ghost">1 e-Faturada yok</span>
+            <span class="chip chip--ghost">1 mükerrer</span>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Fatura no</th><th class="num">Tutar</th><th class="num">KDV</th><th>Durum</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>SF-2025-0014</td><td class="num">38.400,00</td><td class="num">7.680,00</td><td><span class="chip">Eşleşti</span></td></tr>
+              <tr class="is-flagged"><td>SF-2025-0015</td><td class="num">25.900,00</td><td class="num">5.180,00</td><td><span class="chip chip--flag">Tutar farkı</span></td></tr>
+              <tr class="is-ghost"><td>SF-2025-0016</td><td class="num">18.500,00</td><td class="num">3.700,00</td><td><span class="chip chip--ghost">e-Faturada yok</span></td></tr>
+              <tr><td>SF-2025-0017</td><td class="num">18.500,00</td><td class="num">3.700,00</td><td><span class="chip">Eşleşti</span></td></tr>
+              <tr class="is-open"><td>SF-2025-0018</td><td class="num">18.500,00</td><td class="num">3.700,00</td><td><span class="chip chip--flag">Mükerrer</span></td></tr>
+              <tr><td>SF-2025-0019</td><td class="num">41.250,00</td><td class="num">8.250,00</td><td><span class="chip">Eşleşti</span></td></tr>
+              <tr class="is-flagged" id="js-fark-satir"><td>SF-2025-0020</td><td class="num">51.200,00</td><td class="num"><input class="editcell" id="js-fark-tutar" value="10.900,00" data-expected="10240" inputmode="decimal" aria-label="KDV tutarı, düzenlenebilir"></td><td><span class="chip chip--flag" id="js-fark-durum" data-ok="Eşleşti" data-flag="KDV farkı">KDV farkı</span></td></tr>
+            </tbody>
+          </table>
+          <div class="ui__foot">
+            <span class="ui__dev"><span class="devbar"><i id="js-fark-cubuk"></i></span><span id="js-fark-metin" data-ok-text="Fark yok" data-flag-text="KDV farkı: {n} ₺">KDV farkı: 660,00 ₺</span></span>
+            <span class="nums">72 kaydın 69’u eşleşti</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="nasil">
-  <div class="wrap">
-    <h2 class="sec">Dört adımda biter</h2>
-    <p class="sec">Ayrı kurulum, veritabanı, internet bağlantısı gerekmez. Klasörleri gösterin, kontrolü başlatın.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="n">1</div>
-        <h3>Klasörleri seçin</h3>
-        <p>Fatura klasörünüzü ve muavin/kontrol cetveli dosyanızı gösterin. XML, Excel, PDF ve zip karışık olabilir.</p>
+  <!-- ================= NASIL ÇALIŞIR ================= -->
+  <section class="section runin wrap" id="nasil">
+    <div class="runin__col">
+      <h2 class="head">Üç dosya. Tek kontrol.</h2>
+      <p class="run" data-reveal><b>Yükleyin.</b> Satış faturalarınızı ve e-Fatura kayıtlarını seçin; dönem karşılaştırması için de önceki dönem raporunu ekleyin. Program, kayıtları fatura numarası, tarih, tutar ve KDV üzerinden eşler.</p>
+      <p class="run" data-reveal><b>İnceleyin.</b> Sonuç ekranı her satırın yanında eşleşme durumunu gösterir: eşleşti, tutar farkı, KDV farkı, mükerrer, e-Faturada yok, e-Faturada fazla. Dilerseniz KDV oranını ve tutarı doğrudan tablodan düzeltin.</p>
+      <div class="runin__stage runin__frames" data-reveal>
+        <figure class="shot shutter" data-reveal>
+          <img src="ekran-uygulama.png" alt="KDV Çapraz Kontrol uygulaması: solda kayıt listesi, sağda karşılaştırma sonuçları" width="1898" height="1047" loading="lazy">
+        </figure>
+        <figure class="shot shutter" data-reveal>
+          <img src="ekran-tablo.png" alt="Sonuç tablosu: durum renkleri ve KDV düzeltme hücreleri" width="1853" height="398" loading="lazy">
+        </figure>
+        <figure class="shot shutter" data-reveal>
+          <img src="ekran-uygulama.png" alt="Rapor düzenleme ekranı" width="1898" height="1047" loading="lazy">
+        </figure>
       </div>
-      <div class="step">
-        <div class="n">2</div>
-        <h3>Kontrolü başlatın</h3>
-        <p>Program faturaları okur, mükerrerları birleştirir, VKN ve belge no üzerinden muavin kayıtlarıyla eşleştirir.</p>
+      <p class="run" data-reveal><b>Kaydedin.</b> Raporu Excel, PDF veya yazdırılabilir çıktı olarak alın; KDV raporunuzu bu tablodan doldurun. Bir sonraki dönem, önceki dönem raporuyla karşılaştırıldığında yeni kayıtlar otomatik işaretlenir.</p>
+    </div>
+  </section>
+
+  <!-- ================= ÜRÜN SAHNESİ (three.js) ================= -->
+  <section class="section scene wrap" id="sahne" data-scene data-fragment="cross">
+    <div class="scene__grid">
+      <div class="scene__steps">
+        <div class="scene__step">
+          <h3>Faturalar eşleşir</h3>
+          <p>Satış faturası satırları e-Fatura kayıtlarıyla numara ve tutar üzerinden eşlenir.</p>
+        </div>
+        <div class="scene__step">
+          <h3>Farklar işaretlenir</h3>
+          <p>Tutarı veya KDV’si tutmayan satırlar, hangi alanda farklı olduğuyla birlikte renklenir.</p>
+        </div>
+        <div class="scene__step">
+          <h3>Kayda geçer</h3>
+          <p>Her satır kendi sonucunu alır; sonuçları doğrudan rapora taşırsınız.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="n">3</div>
-        <h3>Farkları inceleyin</h3>
-        <p>Renkli tabloda tutarsızlığın türünü ve nedenini okuyun; satıra tıklayıp karşılaştırma detayını görün.</p>
-      </div>
-      <div class="step">
-        <div class="n">4</div>
-        <h3>Raporu verin</h3>
-        <p>Sonucu Excel ve PDF olarak dışa aktarın, beyanname öncesi dosyanıza koyun.</p>
+      <div class="scene__stage">
+        <canvas id="cross-scene" aria-hidden="true"></canvas>
+        <div class="scene__legend" aria-hidden="true">
+          <span><i></i> Eşleşen</span>
+          <span><i></i> Farklı</span>
+          <span><i class="dash"></i> Eksik kayıt</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="formatlar">
-  <div class="wrap">
-    <h2 class="sec">Ne okuyabilirsiniz?</h2>
-    <p class="sec">Ayırmaya, dönüştürmeye gerek yok — program hepsini tek klasörde karışık kabul eder.</p>
-    <div class="fmt-row">
-      <span class="fmt">UBL e-Fatura <small>GİB .xml / .gzip</small></span>
-      <span class="fmt">Excel <small>.xlsx — fiş listesi, muavin, kontrol cetveli</small></span>
-      <span class="fmt">PDF <small>taranmış fiş dahil</small></span>
-      <span class="fmt">ZIP <small>klasçak / toplu arşiv</small></span>
+  <!-- ================= ÇIKTILAR ================= -->
+  <section class="section showcase wrap" id="ciktilar">
+    <div class="showcase__grid">
+      <div class="showcase__names">
+        <button type="button" data-target="pane-sonuc" aria-pressed="true">Sonuç</button>
+        <button type="button" data-target="pane-arsiv" aria-pressed="false">Arşiv</button>
+        <button type="button" data-target="pane-mukerrer" aria-pressed="false">Mükerrer</button>
+        <button type="button" data-target="pane-donem" aria-pressed="false">Dönem</button>
+        <p class="muted">Çalışma ekranları, bir Excel şablonu ya da klasör değil; kontrolün kendisi.</p>
+      </div>
+      <div class="showcase__stage">
+        <div class="showcase__pane is-on" id="pane-sonuc">
+          <figure class="shot shutter" data-reveal>
+            <img src="ekran-uygulama.png" alt="Uygulama penceresi: sol tarafta dosya ve filtre alanı, ortada kayıt tablosu, sağda karşılaştırma özeti" width="1898" height="1047" loading="lazy">
+            <figcaption class="caption small">Uygulama penceresi: kayıt tablosu ve karşılaştırma özeti.</figcaption>
+          </figure>
+          <figure class="shot shutter" data-reveal>
+            <img src="ekran-tablo.png" alt="Sonuç tablosu: durum renkleri, KDV düzeltme hücreleri ve toplam satırı" width="1853" height="398" loading="lazy">
+            <figcaption class="caption small">Sonuç tablosu: renkli durum sütunu, düzenlenebilir KDV hücreleri ve toplam.</figcaption>
+          </figure>
+        </div>
+        <div class="showcase__pane" id="pane-arsiv">
+          <figure class="shot">
+            <img src="ekran-uygulama.png" alt="Arşivleme ekranı" width="1898" height="1047" loading="lazy">
+            <figcaption class="caption small">Kontrol edilmiş kayıtlar dönem arşivine aktarılır.</figcaption>
+          </figure>
+        </div>
+        <div class="showcase__pane" id="pane-mukerrer">
+          <figure class="shot">
+            <img src="ekran-tablo.png" alt="Mükerrer fatura listesi" width="1853" height="398" loading="lazy">
+            <figcaption class="caption small">Aynı faturanın iki kez işlenen satırları tek listede.</figcaption>
+          </figure>
+        </div>
+        <div class="showcase__pane" id="pane-donem">
+          <div class="sheet">
+            <h4>Dönem karşılaştırma</h4>
+            <dl>
+              <div class="row"><span>2025 03.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 04.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 05.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 06.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 07.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 08.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 09.</span><span class="nums">0,00</span></div>
+              <div class="row"><span>2025 10.</span><span class="nums">0,00</span></div>
+            </dl>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="lisans" style="padding-top:0">
-  <div class="wrap">
-    <h2 class="sec">Lisans</h2>
-    <p class="sec">Demo ile kendi verinizde deneyin; beğenirseniz lisans anahtarı için iletişime geçin.</p>
-    <div class="plans">
+  <!-- ================= KARŞILAŞTIRMA ================= -->
+  <section class="section wrap" id="karsilastirma">
+    <div class="compare">
+      <div class="compare__head">
+        <h2>Kontrol nasıl yapılır?</h2>
+        <div class="compare__col compare__col--us">KDV Çapraz Kontrol</div>
+        <div class="compare__col">Manuel kontrol</div>
+        <div class="compare__col">Sonuç</div>
+      </div>
+      <div class="compare__rows">
+        <div class="compare__row">
+          <div class="name">Hız</div>
+          <div class="us"><span>Yaklaşık 1 dakika</span></div>
+          <div class="lab">Saatler</div>
+          <div class="lab">100 kayıt</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Doğruluk</div>
+          <div class="us"><span>Değişmez</span></div>
+          <div class="lab">İnsana bağlı</div>
+          <div class="lab">Her seferinde</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Sonuç</div>
+          <div class="us"><span>Satır bazlı</span></div>
+          <div class="lab">Genel toplam</div>
+          <div class="lab">Satır bazlı</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Rapor</div>
+          <div class="us"><span>Otomatik</span></div>
+          <div class="lab">Elle yazılır</div>
+          <div class="lab">Hazır</div>
+        </div>
+        <div class="compare__row">
+          <div class="name">Mükerrer</div>
+          <div class="us"><span>İşaretler</span></div>
+          <div class="lab">Gözden kaçar</div>
+          <div class="lab">Listelenir</div>
+        </div>
+      </div>
+    </div>
+    <div class="proof">
+      <div class="proof__intro">
+        <p><b>Kullanım alanı</b></p>
+        <p class="muted">Mali müşavirler · Ön muhasebe ekipleri · Serbest muhasebeciler</p>
+      </div>
+      <ul>
+        <li>Denetim kaydı</li>
+        <li>Excel’e aktarım</li>
+        <li>Yerel kurulum</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= LİSANS ================= -->
+  <section class="section wrap" id="lisans">
+    <h2 class="head" style="margin-bottom: 2.5rem">Tek seferlik lisans, süresiz kullanım.</h2>
+    <div class="plans__grid">
       <div class="plan">
-        <h3>Demo</h3>
-        <div class="fiyat">Ücretsiz <small>· 15 gün</small></div>
-        <ul>
-          <li>Tüm özellikler açık</li>
-          <li>Sınırsız fatura ve cetvel</li>
-          <li>Excel / PDF dışa aktarım</li>
-          <li>Kurulum gerektirmez</li>
-        </ul>
-        <a class="btn btn-ghost" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">İndir ve deneyin</a>
+        <div>
+          <h3 class="plans__figure">₺750 <span class="plans__period">/ 6 ay</span></h3>
+          <p class="muted" style="margin-top: 1rem">Altı ay boyunca sınırsız kullanım ve tüm güncellemeler dahil.</p>
+        </div>
+        <p class="small muted">6102 sayılı Türk Ticaret Kanunu ve Vergi Usul Kanunu kapsamında, mali müşavirler ve işletmeler için hazırlanmıştır.</p>
+        <a class="button" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" data-press>Ücretsiz indir</a>
       </div>
-      <div class="plan hone">
-        <h3>Yıllık Lisans</h3>
-        <div class="fiyat">Tek bilgisayar <small>· 1 yıl</small></div>
-        <ul>
-          <li>Anahtar tek tıkla etkinleşir</li>
-          <li>Otomatik güncelleme</li>
-          <li>e-Fatura portalından toplu çekme (GİB)</li>
-          <li>E-posta ile destek</li>
-        </ul>
-        <a class="btn" href="mailto:ardaekiz72@gmail.com?subject=KDV%20%C3%87apraz%20Kontrol%20-%20Lisans">Fiyat ve aktivasyon için yazın</a>
-        <p style="margin:14px 0 0;color:var(--ikincil);font-size:14px">
-          Tel: <a href="tel:+905462083854" style="color:var(--metin)">0546 208 38 54</a> ·
-          <a href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>
-        </p>
+      <div class="plan">
+        <div>
+          <h3 class="plans__figure">₺1.200 <span class="plans__period">/ 12 ay</span></h3>
+          <p class="muted" style="margin-top: 1rem">Bir yıl boyunca sınırsız kullanım ve tüm güncellemeler dahil.</p>
+        </div>
+        <p class="small muted">Program yerel çalışır; kayıtlarınız bilgisayarınızdan çıkmaz. Deneme süresi boyunca tüm özellikler açıktır.</p>
+        <a class="button button--quiet" href="#iletisim" data-press>Lisans al</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="pad" id="sss" style="background:var(--zemin2);border-top:1px solid var(--border)">
-  <div class="wrap">
-    <h2 class="sec">Sık sorulanlar</h2>
-    <div class="faq">
-      <details>
-        <summary>Demoda veri sınırı var mı?</summary>
-        <p>Hayır. 15 gün boyunca tüm özellikler ve sınırsız dosya ile çalışırsınız; yalnızca süre dolunca program lisans ister.</p>
-      </details>
-      <details>
-        <summary>Faturalarım bilgisayarımdan çıkıyor mu?</summary>
-        <p>Hayır. Tüm karşılaştırma kendi bilgisayarınızda yapılır. Lisans doğrulama dışında program hiçbir veriyi dışarı göndermez.</p>
-      </details>
-      <details>
-        <summary>Muavin programından aldığım Excel de çalışır mı?</summary>
-        <p>Evet. Luca, Logo ve standart mali müşavirlik programı çıktıları için başlık eşleştirme otomatiktir; farklı bir şablonu ilk seferde tanımlarsınız, sonraki dönemlerde otomatik hatırlanır.</p>
-      </details>
-      <details>
-        <summary>Birden fazla dönem dosyasını aynı anda çalıştırabilir miyim?</summary>
-        <p>Evet. Yıllık geçici mizun veya çok dönemli cetvel verebilirsiniz; sonuçlar dönem filtresiyle ayrı ayrı da raporlanır.</p>
-      </details>
-      <details>
-        <summary>Lisans başka bilgisayara taşınabilir mi?</summary>
-        <p>Anahtar bir bilgisayara bağlıdır; format veya bilgisayar değişiminde e-posta ile taşıma yapılabilir.</p>
-      </details>
+  <!-- ================= SSS ================= -->
+  <section class="section faq wrap" id="sss">
+    <div class="faq__grid">
+      <h2>Sık sorulanlar</h2>
+      <div class="faq__list">
+        <details>
+          <summary>Verilerim bilgisayar dışına çıkıyor mu?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Hayır. Program yerel çalışır; faturalarınız ve raporlarınız bilgisayarınızdan çıkmaz.</p></div>
+        </details>
+        <details>
+          <summary>Hangi dosyaları yükleyebilirim?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Excel ve CSV formatındaki satış faturaları, e-Fatura kayıtları ve önceki dönem raporları.</p></div>
+        </details>
+        <details>
+          <summary>Kurulum gerekiyor mu?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Hayır. Windows 10 ve 11’de çalışır; indirdikten sonra doğrudan açabilirsiniz.</p></div>
+        </details>
+        <details>
+          <summary>Lisans süresi dolduğunda ne olur?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Program çalışmaya devam eder; yeni sürüm güncellemeleri lisans süresince geçerlidir.</p></div>
+        </details>
+        <details>
+          <summary>Deneme sürümü var mı?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Evet. Programı ücretsiz indirip sınırsız deneyebilirsiniz.</p></div>
+        </details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <a class="mark" href="."><img src="logo.png" alt=""> KDV Çapraz Kontrol</a>
-    <span>Geliştirici: Arda M. Ekiz · <span id="yil"></span></span>
-    <span class="spacer"></span>
-    <a href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>
-    <a href="tel:+905462083854">0546 208 38 54</a>
-    <a href="https://github.com/ArdaEkiz0/kdv-indir">GitHub</a>
-    <a href="index-en.html">English</a>
-  </div>
+  <!-- ================= CTA ================= -->
+  <section class="cta">
+    <div class="cta__grid wrap">
+      <h2>İlk kontrolünüzü bugün yapın.</h2>
+      <div class="cta__side">
+        <p>Programı ücretsiz indirip deneyin; hazır olduğunuzda tek seferlik lisansla sınırsız kullanın.</p>
+        <a class="button button--stage" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest" data-press>Ücretsiz indir</a>
+        <a class="link" href="#iletisim">Lisans ve sorular için yazın</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= İLETİŞİM ================= -->
+  <section class="contact wrap" id="iletisim">
+    <div class="contact__grid">
+      <div class="contact__col">
+        <p class="contact__prompt"><span>Bir sorunuz mu var?</span><span class="soft">Lisans ve sorular için yazın.</span></p>
+        <form class="contact__form" action="mailto:ardaekiz72@gmail.com" method="post" enctype="text/plain" data-subject="KDV Çapraz Kontrol — lisans ve sorular">
+          <div class="contact__field">
+            <label class="sr-only" for="eposta">E-posta adresiniz</label>
+            <input class="field" id="eposta" name="eposta" type="email" placeholder="E-posta adresiniz" required>
+            <button class="contact__send" type="submit" aria-label="Gönder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <p class="contact__next small muted">Gönder’e bastığınızda e-posta uygulamanız açılır.</p>
+        </form>
+      </div>
+      <dl class="contact__rows">
+        <div><dt>Telefon</dt><dd><a class="link" href="tel:+905462083854">0546 208 38 54</a></dd></div>
+        <div><dt>E-posta</dt><dd><a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a></dd></div>
+        <div><dt>Sürüm</dt><dd class="nums">v3.1.64</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <nav aria-label="Alt menü">
+    <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">İndir</a>
+    <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir">GitHub</a>
+    <a class="link" href="#iletisim">Destek</a>
+    <a class="link" href="#sss">Lisans</a>
+    <a class="link" href="index-en.html" lang="en">English</a>
+  </nav>
+  <span class="muted">© 2025 Arda Ekiz</span>
+  <span class="end"><a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest">İndir · v3.1.64</a></span>
 </footer>
 
-<script>
-fetch("https://api.github.com/repos/ArdaEkiz0/kdv-indir/releases/latest")
-  .then(function (r) { return r.json(); })
-  .then(function (d) {
-    if (d && d.tag_name) {
-      document.getElementById("surum-rozet").textContent = d.tag_name;
-      document.getElementById("surum-metni").textContent = "son sürüm " + d.tag_name;
-    }
-  })
-  .catch(function () {});
-document.getElementById("yil").textContent = new Date().getFullYear();
-</script>
-
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="scene.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
