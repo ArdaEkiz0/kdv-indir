@@ -346,12 +346,15 @@ p + p { margin-top: 0.9em; }
 .compare { display: grid; gap: 0; }
 .compare__head {
   display: grid; grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
-  gap: var(--gutter); align-items: end; padding-bottom: 1.1rem;
+  grid-template-rows: auto auto;
+  column-gap: var(--gutter); row-gap: 0.75rem;
+  align-items: end; padding-bottom: 1.1rem;
 }
-.compare__head h2 { grid-column: 1 / span 2; font-size: var(--step-head); letter-spacing: -0.025em; }
+.compare__head h2 { grid-column: 1 / -1; font-size: var(--step-head); letter-spacing: -0.025em; }
 .compare__col { font-size: var(--step-body); font-weight: 500; }
-.compare__col--us { color: var(--accent); }
-.compare__col:last-child { text-align: right; }
+.compare__col--us { color: var(--accent); grid-column: 2; }
+.compare__col:nth-of-type(2) { grid-column: 3; }
+.compare__col:last-child { grid-column: 4; text-align: right; }
 .compare__rows { display: grid; }
 .compare__row {
   display: grid; grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
