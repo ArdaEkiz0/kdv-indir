@@ -67,11 +67,12 @@
 
     <h2>Şeffaflık: SBOM ve güvenlik taraması</h2>
     <p>Uygulamanın içindeki her üçüncü parti bileşen — kütüphaneler ve yerel çalışma zamanları dahil — <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SBOM.json">SBOM.json</a> listesinde yayımlanır. Liste CycloneDX 1.5 biçimindedir ve doğrudan paketin içinden çıkarılır: her bileşenin sürümü, lisansı ve bağımlılıkları; yerel çalışma zamanı dosyalarının SHA-256 özetleri.</p>
-    <p>Dosyaları bağımsız güvenlik motorlarında da inceleyebilirsiniz. VirusTotal bağlantıları dosyanın SHA-256 özetiyle açılır:</p>
+    <p>Dosyaları bağımsız güvenlik motorlarında da inceleyebilirsiniz. VirusTotal bağlantıları dosyanın SHA-256 özetiyle açılır. 2 Kasım 2026 taramasında:</p>
     <ul class="legal__list">
-      <li><a class="link" href="https://www.virustotal.com/gui/file/b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a">Kurulum dosyası · VirusTotal</a></li>
-      <li><a class="link" href="https://www.virustotal.com/gui/file/2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2">Taşınabilir paket · VirusTotal</a></li>
+      <li><a class="link" href="https://www.virustotal.com/gui/file/b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a">Kurulum dosyası · VirusTotal</a> — 61 motorun hiçbiri tespit yapmadı (0/61).</li>
+      <li><a class="link" href="https://www.virustotal.com/gui/file/2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2">Taşınabilir paket · VirusTotal</a> — 60 motorun 59’u tespit etmedi; yalnızca Bkav Pro genel bir imza ile (W32.Malware.62180C0C) işaretledi.</li>
     </ul>
+    <p>Sonuçlar bu dosyaların 2 Kasım 2026 VirusTotal taramasından alınmıştır; yeni bir sürüm yayımladığımızda bu bölüm güncellenir.</p>
 
     <h2>Kurulum</h2>
     <ol class="legal__list legal__list--num">

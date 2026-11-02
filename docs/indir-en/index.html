@@ -67,11 +67,12 @@
 
     <h2>Transparency: SBOM and security scanning</h2>
     <p>Every third-party component inside the application — libraries and native runtimes included — is published in the <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SBOM.json">SBOM.json</a> list. The list is CycloneDX 1.5 and is extracted directly from the shipped package: each component’s version, licence and dependencies, plus the SHA-256 of the native runtime files.</p>
-    <p>You can also inspect the files with independent security engines. The VirusTotal links open by the file’s SHA-256:</p>
+    <p>You can also inspect the files with independent security engines. The VirusTotal links open by the file’s SHA-256. In the scan of 2 November 2026:</p>
     <ul class="legal__list">
-      <li><a class="link" href="https://www.virustotal.com/gui/file/b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a">Installer · VirusTotal</a></li>
-      <li><a class="link" href="https://www.virustotal.com/gui/file/2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2">Portable package · VirusTotal</a></li>
+      <li><a class="link" href="https://www.virustotal.com/gui/file/b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a">Installer · VirusTotal</a> — none of 61 engines detected (0/61).</li>
+      <li><a class="link" href="https://www.virustotal.com/gui/file/2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2">Portable package · VirusTotal</a> — 59 of 60 engines did not detect; only Bkav Pro flagged it with a generic signature (W32.Malware.62180C0C).</li>
     </ul>
+    <p>These results are taken from the 2 November 2026 VirusTotal scan of the exact files above; we update this section when a new release is published.</p>
 
     <h2>Installation</h2>
     <ol class="legal__list legal__list--num">
