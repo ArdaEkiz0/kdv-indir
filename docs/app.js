@@ -8,7 +8,6 @@
   root.classList.add('js');
 
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var locale = (root.lang || 'tr').indexOf('en') === 0 ? 'en-GB' : 'tr-TR';
 
   /* ---------- girişler: bölüm parçaları sırayla yükselir ---------- */
   var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
@@ -30,53 +29,6 @@
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
     revealEls.forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---------- canlı hücre: ziyaretçi KDV tutarını düzeltir, kontrol ateşlenir ---------- */
-  var cell = document.getElementById('js-fark-tutar');
-  var flagChip = document.getElementById('js-fark-durum');
-  var devFill = document.getElementById('js-fark-cubuk');
-  var devText = document.getElementById('js-fark-metin');
-  var flagRow = document.getElementById('js-fark-satir');
-
-  function fmt(n) {
-    return n.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  }
-
-  function parseNum(s) {
-    s = String(s).trim();
-    var c = s.lastIndexOf(','), d = s.lastIndexOf('.');
-    if (c > d) s = s.replace(/\./g, '').replace(',', '.');
-    else s = s.replace(/,/g, '');
-    return parseFloat(s);
-  }
-
-  function runCheck() {
-    if (!cell || !flagChip || !devFill || !devText) return;
-    var expected = parseFloat(cell.getAttribute('data-expected'));
-    var actual = parseNum(cell.value);
-    if (isNaN(actual)) actual = expected;
-    var diff = Math.abs(expected - actual);
-    var ratio = expected ? Math.min(1, diff / expected) : 0;
-
-    devFill.style.width = (ratio * 100).toFixed(1) + '%';
-    if (diff < 0.005) {
-      flagChip.textContent = flagChip.getAttribute('data-ok');
-      flagChip.classList.remove('chip--flag');
-      if (flagRow) flagRow.classList.remove('is-flagged');
-      devText.textContent = devText.getAttribute('data-ok-text');
-    } else {
-      flagChip.textContent = flagChip.getAttribute('data-flag');
-      flagChip.classList.add('chip--flag');
-      if (flagRow) flagRow.classList.add('is-flagged');
-      devText.textContent = devText.getAttribute('data-flag-text').replace('{n}', fmt(diff));
-    }
-  }
-
-  if (cell) {
-    cell.addEventListener('input', runCheck);
-    cell.addEventListener('change', runCheck);
-    runCheck();
   }
 
   /* ---------- çıktılar: isim seçince sayfa değişir (200ms) ---------- */

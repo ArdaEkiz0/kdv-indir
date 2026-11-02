@@ -23,7 +23,7 @@
     steps.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
   }
 
-  import('./vendor/three.min.js').then(function (THREE) {
+  function sahneKur(THREE) {
     var width = mount.clientWidth || 640;
     var height = mount.clientHeight || 480;
 
@@ -180,8 +180,29 @@
         renderNow();
       }, 150);
     });
-  }).catch(function () {
+  }
+
+  function sahneBasarisiz() {
     /* WebGL yoksa adımlar yine okunur; sahne boş kalır */
     steps.forEach(function (s) { s.classList.add('is-active'); });
-  });
+  }
+
+  function yukle() {
+    import('./vendor/three.min.js').then(sahneKur).catch(sahneBasarisiz);
+  }
+
+  /* three.js (≈536 KB) yalnız sahne ekrana yaklaşınca yüklenir */
+  if (!('IntersectionObserver' in window)) {
+    yukle();
+  } else {
+    var sahneGO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          sahneGO.disconnect();
+          yukle();
+        }
+      });
+    }, { rootMargin: '260px 0px' });
+    sahneGO.observe(mount);
+  }
 })();
