@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &amp; Personal Data Disclosure · KDV Çapraz Kontrol</title>
+<meta name="description" content="The personal data KDV Çapraz Kontrol processes: device fingerprint and IP address, stated openly. Your invoice and accounting data never leave your computer.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav" aria-label="Main menu">
+    <a class="nav__mark link" href="index-en.html">KDV Cross-Check</a>
+    <div class="nav__links">
+      <a class="link" href="index-en.html#how">How it works</a>
+      <a class="link" href="index-en.html#license">License</a>
+      <a class="link" href="mesafeli-satis-en.html">Distance sales</a>
+      <a class="link" href="iade-en.html">Returns</a>
+      <a class="link" href="kvkk.html" lang="tr">Türkçe</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="legal-head wrap">
+    <p class="small muted"><a class="link" href="index-en.html">← Home</a></p>
+    <h1 class="display lines">
+      <span class="line"><span data-line style="--i:0">Your data, stated</span></span>
+      <span class="line"><span data-line style="--i:1">plainly and narrowly.</span></span>
+    </h1>
+    <p class="lead">KDV Cross-Check collects only a few technical values for license verification. Every item and its purpose are listed below — including the device fingerprint and IP address.</p>
+    <p class="small muted">Last updated: 2 November 2026</p>
+  </section>
+
+  <section class="wrap legal">
+
+    <h2>Data controller</h2>
+    <p>Arda Mehmet Ekiz (independent software developer).<br>
+    E-mail: <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> ·
+    Phone: <a class="link" href="tel:+905462083854">+90 546 208 38 54</a></p>
+
+    <h2>Personal data processed</h2>
+    <p>When the application starts it sends one verification request to the license server. The request carries the data below, which is stored on the server:</p>
+    <table class="legal__table">
+      <thead>
+        <tr><th>Data</th><th>How it is obtained</th><th>Why it is processed</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Device fingerprint</strong> (KDV-XXXX-XXXX-XXXX-XXXX)</td>
+          <td>A SHA-256 digest of your Windows machine GUID (MachineGuid) and network card address (MAC). The raw hardware identifiers are never sent; only the digest is.</td>
+          <td>Binding the license to the right device; stopping the 15-day trial from being restarted on the same machine</td>
+        </tr>
+        <tr>
+          <td><strong>IP address</strong></td>
+          <td>Arrives with the verification request</td>
+          <td>Security; detecting many devices behind one IP (marked “shared IP” in the admin panel)</td>
+        </tr>
+        <tr>
+          <td>Application version</td>
+          <td>With the verification request</td>
+          <td>Update information and technical support</td>
+        </tr>
+        <tr>
+          <td>Operating system information</td>
+          <td>With the verification request</td>
+          <td>Technical support</td>
+        </tr>
+        <tr>
+          <td>Machine name</td>
+          <td>With the verification request</td>
+          <td>Telling devices apart in the admin panel</td>
+        </tr>
+        <tr>
+          <td>First and last seen timestamps</td>
+          <td>Server record</td>
+          <td>License term tracking</td>
+        </tr>
+        <tr>
+          <td>License status, term and seller notes</td>
+          <td>Sales and authorization actions</td>
+          <td>License and sales tracking</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What stays on your computer</h2>
+    <p>Your invoices, ledger records, control tables and every generated report are processed and stored only on your own computer. They are never sent to the server. There is no telemetry, usage analytics or screen recording in the application.</p>
+
+    <h2>Collection method, legal basis and transfers</h2>
+    <p>The technical data above is collected by the automatic HTTPS request the application makes at startup. The legal basis is the performance of the license contract and our legitimate interest (preventing license abuse). The data is stored on Cloudflare (Workers KV), our hosting provider. The update check makes a separate HTTPS request to GitHub, where your IP address is also visible.</p>
+
+    <h2>Cookies and tracking</h2>
+    <p>This site uses no cookies, analytics or tracking scripts. The application contains no component that collects usage data.</p>
+
+    <h2>Retention and deletion</h2>
+    <p>Data is kept while your licence is valid and afterwards for as long as legal obligations require. To have it deleted, write to <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> with your device fingerprint (shown in the application); the record is then deleted. Note that once the licence record is gone the application can no longer verify itself and locks.</p>
+
+    <h2>Your rights (Article 11, Turkish Data Protection Law No. 6698)</h2>
+    <ul class="legal__list">
+      <li>Learn whether your personal data is being processed</li>
+      <li>Request information if it has been processed</li>
+      <li>Learn the purpose of processing and whether it is used accordingly</li>
+      <li>Know the third parties to whom data is transferred, in Turkey or abroad</li>
+      <li>Request correction of incomplete or incorrect processing</li>
+      <li>Request deletion or destruction of the data</li>
+      <li>Request that corrections and deletions be notified to the third parties involved</li>
+      <li>Object to a result produced solely by automated analysis that works against you</li>
+      <li>Claim compensation if unlawful processing causes you damage</li>
+    </ul>
+    <p>You can send these requests to the e-mail address or phone number above.</p>
+
+  </section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="Footer menu">
+    <a class="link" href="index-en.html">Home</a>
+    <a class="link" href="kvkk-en.html">Privacy</a>
+    <a class="link" href="mesafeli-satis-en.html">Distance sales</a>
+    <a class="link" href="iade-en.html">Returns</a>
+    <a class="link" href="kvkk.html" lang="tr">Türkçe</a>
+  </nav>
+  <span class="muted">© 2026 Arda Ekiz</span>
+  <span class="end"><a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/KDV-Capraz-Kontrol-kurulum.exe">Download · v3.1.72</a></span>
+</footer>
+
+</body>
+</html>

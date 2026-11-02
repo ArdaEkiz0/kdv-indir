@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kişisel Verilerin Korunması · KDV Çapraz Kontrol</title>
+<meta name="description" content="KDV Çapraz Kontrol uygulamasının işlediği kişisel veriler: cihaz parmak izi ve IP adresi açıkça listelenir. Fatura ve muhasebe verileri yalnız bilgisayarınızda kalır.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav" aria-label="Ana menü">
+    <a class="nav__mark link" href="index.html">KDV Çapraz Kontrol</a>
+    <div class="nav__links">
+      <a class="link" href="index.html#nasil">Nasıl çalışır</a>
+      <a class="link" href="index.html#lisans">Lisans</a>
+      <a class="link" href="mesafeli-satis.html">Mesafeli satış</a>
+      <a class="link" href="iade.html">İade</a>
+      <a class="link" href="kvkk-en.html" lang="en">English</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="legal-head wrap">
+    <p class="small muted"><a class="link" href="index.html">← Ana sayfa</a></p>
+    <h1 class="display lines">
+      <span class="line"><span data-line style="--i:0">Kişisel verileriniz,</span></span>
+      <span class="line"><span data-line style="--i:1">açıkça ve sınırlı.</span></span>
+    </h1>
+    <p class="lead">KDV Çapraz Kontrol yalnız lisans doğrulaması için birkaç teknik veri toplar. Aşağıda hangi verinin, neden işlendiği eksiksiz listelenmiştir.</p>
+    <p class="small muted">Son güncelleme: 2 Kasım 2026</p>
+  </section>
+
+  <section class="wrap legal">
+
+    <h2>Veri sorumlusu</h2>
+    <p>Arda Mehmet Ekiz (bireysel yazılım geliştirici).<br>
+    E-posta: <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> ·
+    Telefon: <a class="link" href="tel:+905462083854">0546 208 38 54</a></p>
+
+    <h2>İşlenen kişisel veriler</h2>
+    <p>Uygulama açıldığında lisans sunucusuna bir doğrulama isteği gider. Bu istekte aşağıdaki veriler bulunur ve sunucuda saklanır:</p>
+    <table class="legal__table">
+      <thead>
+        <tr><th>Veri</th><th>Nasıl elde edilir</th><th>Neden işlenir</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cihaz parmak izi</strong> (KDV-XXXX-XXXX-XXXX-XXXX)</td>
+          <td>Windows makine kimliğinizden (MachineGuid) ve ağ kartı adresinizden (MAC) SHA-256 özeti alınarak üretilir. Ham donanım kimlikleriniz sunucuya gönderilmez; yalnızca özet gönderilir.</td>
+          <td>Lisansın doğru cihaza tanımlanması; 15 günlük denemenin aynı cihazda tekrar tekrar başlatılmasını önleme</td>
+        </tr>
+        <tr>
+          <td><strong>IP adresi</strong></td>
+          <td>Doğrulama isteğiyle birlikte ulaşır</td>
+          <td>Güvenlik; aynı IP’den çok sayıda cihaz kullanımının tespiti (yönetim panelinde “paylaşılan IP” işareti)</td>
+        </tr>
+        <tr>
+          <td>Uygulama sürümü</td>
+          <td>Doğrulama isteğiyle birlikte</td>
+          <td>Güncelleme bilgisi ve teknik destek</td>
+        </tr>
+        <tr>
+          <td>İşletim sistemi bilgisi</td>
+          <td>Doğrulama isteğiyle birlikte</td>
+          <td>Teknik destek</td>
+        </tr>
+        <tr>
+          <td>Makine adı</td>
+          <td>Doğrulama isteğiyle birlikte</td>
+          <td>Yönetim panelinde cihazları ayırt etme</td>
+        </tr>
+        <tr>
+          <td>İlk ve son görülme zamanı</td>
+          <td>Sunucu kaydı</td>
+          <td>Lisans süresi takibi</td>
+        </tr>
+        <tr>
+          <td>Lisans durumu, süresi ve satıcı notları</td>
+          <td>Satış ve yetkilendirme işlemleri</td>
+          <td>Lisans ve satış takibi</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Bilgisayarınızda kalan veriler</h2>
+    <p>Faturalarınız, muavin defteri kayıtlarınız, kontrol cetvelleriniz ve üretilen tüm raporlar yalnızca kendi bilgisayarınızda işlenir ve saklanır. Bu veriler sunucuya gönderilmez. Uygulamada telemetri, kullanım analizi veya ekran kaydı yoktur.</p>
+
+    <h2>Toplama yöntemi, dayanak ve aktarım</h2>
+    <p>Yukarıdaki teknik veriler, uygulamanın açılışında yaptığı otomatik HTTPS isteğiyle toplanır. İşlemenin dayanağı, lisans sözleşmesinin kurulması ve ifası ile meşru menfaatimizdir (lisans suistimalinin önlenmesi). Veriler, barındırma hizmeti aldığımız Cloudflare (Workers KV) altyapısında saklanır. Güncelleme denetimi ayrıca GitHub’a bir HTTPS isteği yapar; bu istekte de IP adresiniz GitHub’a ulaşır.</p>
+
+    <h2>Çerez ve izleme</h2>
+    <p>Bu sitede çerez, analitik veya takip betiği yoktur. Uygulamada kullanım verisi toplayan bir bileşen yoktur.</p>
+
+    <h2>Saklama ve silme</h2>
+    <p>Veriler, lisansınız geçerli olduğu sürece ve sonrasında yasal yükümlülükler için gerekli süre boyunca saklanır. Silinmesini isterseniz <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> adresine cihaz parmak izinizle (uygulamada görünür) yazmanız yeterlidir; kayıtlar silinir. Lisans kaydı silindiğinde program lisans doğrulamasını yapamayacağı için kilitlenir.</p>
+
+    <h2>Haklarınız (KVKK m.11)</h2>
+    <ul class="legal__list">
+      <li>Kişisel verinizin işlenip işlenmediğini öğrenme</li>
+      <li>İşlenmişse bilgi talep etme</li>
+      <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+      <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
+      <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
+      <li>Silinmesini veya yok edilmesini isteme</li>
+      <li>Düzeltme/silme işleminin aktarılan üçüncü kişilere bildirilmesini isteme</li>
+      <li>Münhasıran otomatik sistemlerle analiz sonucu aleyhinize bir sonuca itiraz etme</li>
+      <li>Kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
+    </ul>
+    <p>Bu taleplerinizi yukarıdaki e-posta veya telefonla iletebilirsiniz.</p>
+
+  </section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="Alt menü">
+    <a class="link" href="index.html">Ana sayfa</a>
+    <a class="link" href="kvkk.html">KVKK</a>
+    <a class="link" href="mesafeli-satis.html">Mesafeli satış</a>
+    <a class="link" href="iade.html">İade</a>
+    <a class="link" href="kvkk-en.html" lang="en">English</a>
+  </nav>
+  <span class="muted">© 2026 Arda Ekiz</span>
+  <span class="end"><a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/KDV-Capraz-Kontrol-kurulum.exe">İndir · v3.1.72</a></span>
+</footer>
+
+</body>
+</html>
