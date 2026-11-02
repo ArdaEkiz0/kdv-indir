@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İndir · KDV Çapraz Kontrol</title>
+<meta name="description" content="KDV Çapraz Kontrol v3.1.72 · Windows 10 ve 11 · kurulumlu (80,7 MB) veya taşınabilir (111,4 MB) · SHA-256 özetleriyle · 15 gün ücretsiz deneme.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <nav class="nav" aria-label="Ana menü">
+    <a class="nav__mark link" href="../index.html">KDV Çapraz Kontrol</a>
+    <div class="nav__links">
+      <a class="link" href="../index.html#nasil">Nasıl çalışır</a>
+      <a class="link" href="../index.html#lisans">Lisans</a>
+      <a class="link" href="../kvkk.html">KVKK</a>
+      <a class="link" href="../iade.html">İade</a>
+      <a class="link" href="../indir-en/" lang="en">English</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="legal-head wrap">
+    <p class="small muted"><a class="link" href="../index.html">← Ana sayfa</a></p>
+    <h1 class="display lines">
+      <span class="line"><span data-line style="--i:0">İndirin,</span></span>
+      <span class="line"><span data-line style="--i:1">15 gün deneyin.</span></span>
+    </h1>
+    <p class="lead">Kurulumlu ve taşınabilir sürümler aynı uygulamadır; ikisi de ücretsiz 15 gün deneme ile gelir. Tam sürüm için iletişime geçin.</p>
+    <p class="small muted">Sürüm v3.1.72 · 2 Kasım 2026 · Windows 10 ve 11 (64 bit)</p>
+  </section>
+
+  <section class="wrap legal">
+
+    <h2>İki seçenek</h2>
+    <div class="dl-grid">
+      <div class="dl-card">
+        <p class="small muted">Önerilir</p>
+        <h3>Kurulumlu</h3>
+        <p class="small">Kurulum sihirbazı ile yüklenir; başlat menüsünden açılır, programı kendini günceller.</p>
+        <p class="small muted nums">80,7 MB · KDV-Capraz-Kontrol-kurulum.exe</p>
+        <p><a class="button" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/KDV-Capraz-Kontrol-kurulum.exe" data-press>Kurulumu indir</a></p>
+      </div>
+      <div class="dl-card">
+        <p class="small muted">Kurulum gerektirmez</p>
+        <h3>Taşınabilir</h3>
+        <p class="small">Zip’i açıp “KDV Kontrol.exe” dosyasını çalıştırın. USB bellekte de çalışır.</p>
+        <p class="small muted nums">111,4 MB · KDV-Capraz-Kontrol-portable.zip</p>
+        <p><a class="button" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/KDV-Capraz-Kontrol-portable.zip" data-press>Taşınabilir indir</a></p>
+      </div>
+    </div>
+
+    <h2>İndirdiğiniz dosyayı doğrulayın</h2>
+    <p>Her sürümün SHA-256 özeti <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> dosyasında yayımlanır ve Ed25519 anahtarıyla imzalanır (<a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt.sig">.sig</a>). Bu sürümün özetleri:</p>
+    <div class="dl-sums">
+      <p class="nums">b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a · kurulum</p>
+      <p class="nums">2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2 · taşınabilir</p>
+    </div>
+    <p>Doğrulamak için PowerShell’de:</p>
+    <p class="dl-cmd"><code>certutil -hashfile KDV-Capraz-Kontrol-kurulum.exe SHA256</code></p>
+
+    <h2>Kurulum</h2>
+    <ol class="legal__list legal__list--num">
+      <li>Yukarıdaki kurulum dosyasını indirip çalıştırın.</li>
+      <li>Sihirbazı izleyin. Uygulama kendi kullanıcı klasörünüze kurulur; yönetici izni gerekmez.</li>
+      <li>İlk açılışta 15 günlük deneme otomatik başlar. Tam sürüm için <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> veya <a class="link" href="tel:+905462083854">0546 208 38 54</a>.</li>
+    </ol>
+
+    <h2>Windows uyarısı görürseniz</h2>
+    <p>Uygulamanın kod imzalama sertifikası henüz yoktur; bu yüzden Windows SmartScreen “Bilinmeyen yayıncı” uyarısı gösterebilir. İndirdiğiniz dosyanın SHA-256 özeti yukarıdaki değerle örtüşüyorsa dosya değiştirilmemiştir. Yürütmeniz için: <strong>Diğer bilgiler → Yine de çalıştır</strong>.</p>
+
+    <h2>Güncelleme</h2>
+    <p>Güncellemeleri uygulama içinden kontrol edebilirsiniz. Her güncelleme paketi üç kapıdan geçer: önce Ed25519 imzası, sonra SHA256SUMS.txt özeti, en son dosyanın kendi SHA-256 özeti doğrulanır. Doğrulama geçemezse kurulum başlamaz.</p>
+
+    <h2>Kaldırma</h2>
+    <p>Denetim Masası → Programlar ve Özellikler → KDV Çapraz Kontrol → Kaldır. Alternatif olarak kurulum klasöründeki <code>unins000.exe</code> dosyasını çalıştırın. Kaldırma işlemi uygulamayı ve kurulum dosyalarını tamamen siler; bilgisayarınızda kalan fatura ve rapor dosyalarınıza dokunmaz.</p>
+
+    <h2>Sistem gereksinimleri</h2>
+    <ul class="legal__list">
+      <li>Windows 10 veya 11 (64 bit)</li>
+      <li>Yaklaşık 250 MB disk alanı (kurulum dahil)</li>
+      <li>İnternet yalnız lisans doğrulaması ve güncelleme için gerekir; karşılaştırma çevrimdışı çalışır</li>
+    </ul>
+
+  </section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="Alt menü">
+    <a class="link" href="../index.html">Ana sayfa</a>
+    <a class="link" href="../kvkk.html">KVKK</a>
+    <a class="link" href="../mesafeli-satis.html">Mesafeli satış</a>
+    <a class="link" href="../iade.html">İade</a>
+    <a class="link" href="../indir-en/" lang="en">English</a>
+  </nav>
+  <span class="muted">© 2026 Arda Ekiz</span>
+  <span class="end"><a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/KDV-Capraz-Kontrol-kurulum.exe">İndir · v3.1.72</a></span>
+</footer>
+
+</body>
+</html>
