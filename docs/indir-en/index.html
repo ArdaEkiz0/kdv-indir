@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"><meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Download · KDV Cross-Check</title>
-<meta name="description" content="KDV Cross-Check v3.1.72 · Windows 10 and 11 · installer (80.7 MB) or portable (111.4 MB) · with SHA-256 digests · 15-day free trial.">
+<meta name="description" content="KDV Cross-Check v3.1.72 · Windows 10 and 11 · installer (80.7 MB) or portable (111.4 MB) · 15-day free trial.">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
@@ -57,15 +57,6 @@
       </div>
     </div>
 
-    <h2>Verify what you downloaded</h2>
-    <p>Every release publishes its SHA-256 digests in <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a>, signed with an Ed25519 key (<a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt.sig">.sig</a>). The digests for this release:</p>
-    <div class="dl-sums">
-      <p class="nums">b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a · installer</p>
-      <p class="nums">2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2 · portable</p>
-    </div>
-    <p>To check in PowerShell:</p>
-    <p class="dl-cmd"><code>certutil -hashfile KDV-Capraz-Kontrol-kurulum.exe SHA256</code></p>
-
     <h2>Transparency: SBOM and security scanning</h2>
     <p>Every third-party component inside the application — libraries and native runtimes included — is published in the <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SBOM.json">SBOM.json</a> list. The list is CycloneDX 1.5 and is extracted directly from the shipped package: each component’s version, licence and dependencies, plus the SHA-256 of the native runtime files.</p>
     <p>You can also inspect the files with independent security engines. The VirusTotal links open by the file’s SHA-256. In the scan of 2 November 2026:</p>
@@ -83,7 +74,7 @@
     </ol>
 
     <h2>If Windows shows a warning</h2>
-    <p>The application does not have a code signing certificate yet, so Windows SmartScreen may show an “unknown publisher” warning. If the SHA-256 digest of the file you downloaded matches the value above, the file has not been altered. To proceed: <strong>More info → Run anyway</strong>.</p>
+    <p>The application does not have a code signing certificate yet, so Windows SmartScreen may show an “unknown publisher” warning. If you downloaded the file only from the link on this page, you can continue: <strong>More info → Run anyway</strong>.</p>
 
     <h2>Updates</h2>
     <p>You can check for updates from inside the application. Every update package passes three gates: the Ed25519 signature, then the SHA256SUMS.txt digest, and finally the file's own SHA-256 digest. If verification fails, the update is not installed.</p>

@@ -707,21 +707,3 @@ p + p { margin-top: 0.9em; }
   line-height: 1.25;
 }
 .dl-card .button { justify-self: start; }
-.dl-sums {
-  margin-top: var(--gutter);
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  display: grid;
-  gap: 0.5rem;
-  font-size: var(--step-small);
-}
-.dl-sums p { word-break: break-all; }
-.dl-cmd {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 0.9rem 1.25rem;
-  font-family: ui-monospace, monospace; /* taste-skill-ignore — literal command text (certutil) */
-  font-size: var(--step-small);
-  overflow-x: auto;
-}

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"><meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>İndir · KDV Çapraz Kontrol</title>
-<meta name="description" content="KDV Çapraz Kontrol v3.1.72 · Windows 10 ve 11 · kurulumlu (80,7 MB) veya taşınabilir (111,4 MB) · SHA-256 özetleriyle · 15 gün ücretsiz deneme.">
+<meta name="description" content="KDV Çapraz Kontrol v3.1.72 · Windows 10 ve 11 · kurulumlu (80,7 MB) veya taşınabilir (111,4 MB) · 15 gün ücretsiz deneme.">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
@@ -57,15 +57,6 @@
       </div>
     </div>
 
-    <h2>İndirdiğiniz dosyayı doğrulayın</h2>
-    <p>Her sürümün SHA-256 özeti <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> dosyasında yayımlanır ve Ed25519 anahtarıyla imzalanır (<a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt.sig">.sig</a>). Bu sürümün özetleri:</p>
-    <div class="dl-sums">
-      <p class="nums">b40b7c1184618016ed2da464d9876fd18da09d05898c607043ebd0925ce1de1a · kurulum</p>
-      <p class="nums">2284fe0681c506dc9a8e5d162cc1f52234c99691a076134487c65f2e4521c4b2 · taşınabilir</p>
-    </div>
-    <p>Doğrulamak için PowerShell’de:</p>
-    <p class="dl-cmd"><code>certutil -hashfile KDV-Capraz-Kontrol-kurulum.exe SHA256</code></p>
-
     <h2>Şeffaflık: SBOM ve güvenlik taraması</h2>
     <p>Uygulamanın içindeki her üçüncü parti bileşen — kütüphaneler ve yerel çalışma zamanları dahil — <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SBOM.json">SBOM.json</a> listesinde yayımlanır. Liste CycloneDX 1.5 biçimindedir ve doğrudan paketin içinden çıkarılır: her bileşenin sürümü, lisansı ve bağımlılıkları; yerel çalışma zamanı dosyalarının SHA-256 özetleri.</p>
     <p>Dosyaları bağımsız güvenlik motorlarında da inceleyebilirsiniz. VirusTotal bağlantıları dosyanın SHA-256 özetiyle açılır. 2 Kasım 2026 taramasında:</p>
@@ -83,7 +74,7 @@
     </ol>
 
     <h2>Windows uyarısı görürseniz</h2>
-    <p>Uygulamanın kod imzalama sertifikası henüz yoktur; bu yüzden Windows SmartScreen “Bilinmeyen yayıncı” uyarısı gösterebilir. İndirdiğiniz dosyanın SHA-256 özeti yukarıdaki değerle örtüşüyorsa dosya değiştirilmemiştir. Yürütmeniz için: <strong>Diğer bilgiler → Yine de çalıştır</strong>.</p>
+    <p>Uygulamanın kod imzalama sertifikası henüz yoktur; bu yüzden Windows SmartScreen “Bilinmeyen yayıncı” uyarısı gösterebilir. Dosyayı yalnızca bu sayfadaki bağlantıdan indirdiyseniz devam edebilirsiniz: <strong>Diğer bilgiler → Yine de çalıştır</strong>.</p>
 
     <h2>Güncelleme</h2>
     <p>Güncellemeleri uygulama içinden kontrol edebilirsiniz. Her güncelleme paketi üç kapıdan geçer: önce Ed25519 imzası, sonra SHA256SUMS.txt özeti, en son dosyanın kendi SHA-256 özeti doğrulanır. Doğrulama geçemezse kurulum başlamaz.</p>
