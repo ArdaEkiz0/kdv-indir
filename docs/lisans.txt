@@ -1,5 +1,5 @@
 ﻿KDV ÇAPRAZ KONTROL - SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
-Sürüm 1.2 - 4 Kasım 2026
+Sürüm 1.1 - 3 Kasım 2026
 
 Bu sözleşme, KDV Çapraz Kontrol yazılımını kurarken ve kullanırken uymanız gereken
 koşulları belirler. Kuruluma devam ederek bu metni okuduğunuzu ve kabul ettiğinizi
@@ -12,11 +12,8 @@ beyan etmiş olursunuz.
 2. VERİLEN LİSANS
    Lisans veren, KDV Çapraz Kontrol yazılımını TEK BİR BİLGİSAYARDA, sözleşme
    süresi boyunca kullanmanız için münhasır olmayan, devredilemez bir kullanım
-   hakkı verir. Lisans normalde sunucudan cihazınıza tanımlanır; bu yolda
-   anahtar girilmez. Yurt dışına veri aktarımına açık rıza vermezseniz lisans,
-   satıcının e-posta ile gönderdiği anahtarla uygulamadaki "Çevrimdışı Lisans"
-   ekranından bu cihaza tanımlanır. Bu modda yazılım sunucuya hiçbir veri
-   göndermez ve otomatik güncelleme denetimi yapmaz.
+   hakkı verir. Lisans, sunucudan cihazınıza tanımlanır; uygulamada anahtar (key)
+   girişi yoktur.
 
 3. KAPSAM VE SINIRLAR
    İzin verilenler:
@@ -38,8 +35,8 @@ beyan etmiş olursunuz.
 5. LİSANS DOĞRULAMA VE KİŞİSEL VERİLER
    Yazılım, lisansı doğrulamak için donanım kimliği ve teknik bilgileri sunucuya
    gönderir. Bu verilerin işlenmesi KVKK Aydınlatma Metni'nde açıklanmıştır. İlk
-   açılışta yurt dışı aktarım için açık rızanız alınır. Rıza vermezseniz yazılım
-   sunucuya bağlanmaz; çevrimdışı lisansla çalışır (bkz. madde 2).
+   açılışta yurt dışı aktarım için açık rızanız alınır; onay vermezseniz yazılım
+   açılmaz.
    Tam metin: https://ardaekiz0.github.io/kdv-indir/kvkk.html
 
 6. GÜNCELLEMELER
