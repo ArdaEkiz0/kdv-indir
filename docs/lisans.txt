@@ -1,12 +1,12 @@
-﻿KDV ÇAPRAZ KONTROL — SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
-Sürüm 1.1 · 3 Kasım 2026
+﻿KDV ÇAPRAZ KONTROL - SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
+Sürüm 1.1 - 3 Kasım 2026
 
 Bu sözleşme, KDV Çapraz Kontrol yazılımını kurarken ve kullanırken uymanız gereken
 koşulları belirler. Kuruluma devam ederek bu metni okuduğunuzu ve kabul ettiğinizi
 beyan etmiş olursunuz.
 
 1. TARAFLAR
-   Lisans veren : Arda Mehmet Ekiz — ardaekiz72@gmail.com — 0546 208 38 54
+   Lisans veren : Arda Mehmet Ekiz | ardaekiz72@gmail.com | 0546 208 38 54
    Lisans alan  : Yazılımı kuran ve kullanan gerçek veya tüzel kişi.
 
 2. VERİLEN LİSANS
@@ -17,15 +17,15 @@ beyan etmiş olursunuz.
 
 3. KAPSAM VE SINIRLAR
    İzin verilenler:
-     • Yazılımı lisansladığınız bilgisayara kurmak ve kullanmak.
-     • Kendi kullanımınız için yedek almak.
+     - Yazılımı lisansladığınız bilgisayara kurmak ve kullanmak.
+     - Kendi kullanımınız için yedek almak.
 
    Yasak olanlar:
-     • Lisansı birden fazla bilgisayarda kullanmak veya cihaz sayısını aşmak.
-     • Yazılımı kopyalamak, satmak, kiralamak, alt lisans vermek, dağıtmak.
-     • Tersine mühendislik yapmak, kaynak kodu çıkarmak, lisans doğrulamasını
+     - Lisansı birden fazla bilgisayarda kullanmak veya cihaz sayısını aşmak.
+     - Yazılımı kopyalamak, satmak, kiralamak, alt lisans vermek, dağıtmak.
+     - Tersine mühendislik yapmak, kaynak kodu çıkarmak, lisans doğrulamasını
        atlatmak veya değiştirmek.
-     • Lisans yetkisini paylaşmak, başka cihazlara kopyalamak veya herkese açık
+     - Lisans yetkisini paylaşmak, başka cihazlara kopyalamak veya herkese açık
        biçimde yayınlamak.
 
 4. FİKRİ MÜLKİYET
@@ -37,7 +37,7 @@ beyan etmiş olursunuz.
    gönderir. Bu verilerin işlenmesi KVKK Aydınlatma Metni'nde açıklanmıştır. İlk
    açılışta yurt dışı aktarım için açık rızanız alınır; onay vermezseniz yazılım
    açılmaz.
-   Tam metin: https://ardaekiz0.github.io/kdv-capraz-kontrol/kvkk.html
+   Tam metin: https://ardaekiz0.github.io/kdv-indir/kvkk.html
 
 6. GÜNCELLEMELER
    Lisans veren, yazılımı güncelleme hakkını saklı tutar. Güncellemeler aynı
@@ -62,7 +62,7 @@ beyan etmiş olursunuz.
 10. UYGULANACAK HUKUK
    Bu sözleşmeye Türkiye Cumhuriyeti hukuku uygulanır. Tüketici işlemlerinde Ön
    Bilgilendirme Formu ve Mesafeli Satış Sözleşmesi hükümleri saklıdır.
-   Tam metin: https://ardaekiz0.github.io/kdv-capraz-kontrol/mesafeli-satis.html
+   Tam metin: https://ardaekiz0.github.io/kdv-indir/mesafeli-satis.html
 
 11. KABUL
    Yazılımı kurarak veya kullanarak bu sözleşmeyi okuduğunuzu ve kabul ettiğinizi
