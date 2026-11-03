@@ -34,7 +34,7 @@
       <span class="line"><span data-line style="--i:1">açıkça ve sınırlı.</span></span>
     </h1>
     <p class="lead">KDV Çapraz Kontrol yalnız lisans doğrulaması için birkaç teknik veri toplar. Aşağıda hangi verinin, neden işlendiği eksiksiz listelenmiştir.</p>
-    <p class="small muted">Son güncelleme: 2 Kasım 2026</p>
+    <p class="small muted">Son güncelleme: 3 Kasım 2026</p>
   </section>
 
   <section class="wrap legal">
@@ -92,14 +92,57 @@
     <h2>Bilgisayarınızda kalan veriler</h2>
     <p>Faturalarınız, muavin defteri kayıtlarınız, kontrol cetvelleriniz ve üretilen tüm raporlar yalnızca kendi bilgisayarınızda işlenir ve saklanır. Bu veriler sunucuya gönderilmez. Uygulamada telemetri, kullanım analizi veya ekran kaydı yoktur.</p>
 
-    <h2>Toplama yöntemi, dayanak ve aktarım</h2>
-    <p>Yukarıdaki teknik veriler, uygulamanın açılışında yaptığı otomatik HTTPS isteğiyle toplanır. İşlemenin dayanağı, lisans sözleşmesinin kurulması ve ifası ile meşru menfaatimizdir (lisans suistimalinin önlenmesi). Veriler, barındırma hizmeti aldığımız Cloudflare (Workers KV) altyapısında saklanır. Güncelleme denetimi ayrıca GitHub’a bir HTTPS isteği yapar; bu istekte de IP adresiniz GitHub’a ulaşır.</p>
+    <h2>Toplama yöntemi ve dayanak</h2>
+    <p>Yukarıdaki teknik veriler, uygulamanın açılışında yaptığı otomatik HTTPS isteğiyle toplanır. İşlemenin dayanağı, lisans sözleşmesinin kurulması ve ifası ile meşru menfaatimizdir (lisans suistimalinin önlenmesi).</p>
+
+    <h2>Yurt dışına aktarım (KVKK m.9)</h2>
+    <p>Veriler, barındırma hizmeti aldığımız <strong>Cloudflare, Inc.</strong> altyapısında (Workers &amp; KV) saklanır. Cloudflare sunucuları Türkiye dışında, dünyanın farklı bölgelerinde bulunur; bu nedenle cihaz parmak izi, IP adresi ve teknik kayıt bilgileri <strong>yurt dışına aktarılmaktadır</strong>.</p>
+    <table class="legal__table">
+      <thead>
+        <tr><th>Alıcı</th><th>Ülke</th><th>Aktarılan veri</th><th>Amaç</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cloudflare, Inc. (Workers, KV)</td>
+          <td>ABD ve küresel uç noktalar</td>
+          <td>Cihaz parmak izi, IP adresi, makine adı, işletim sistemi, uygulama sürümü</td>
+          <td>Lisans doğrulama ve kayıt tutma</td>
+        </tr>
+        <tr>
+          <td>GitHub, Inc.</td>
+          <td>ABD</td>
+          <td>IP adresi (yalnızca güncelleme denetimi sırasında)</td>
+          <td>Yeni sürüm olup olmadığının sorgulanması</td>
+        </tr>
+        <tr>
+          <td>Google LLC (Gmail)</td>
+          <td>ABD</td>
+          <td>E-posta adresiniz ve yazışma içeriği</td>
+          <td>Yalnızca siz e-posta gönderirseniz</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Saklama adresi seçilebilir olmadığı için aktarım bu hizmetin ayrılmaz parçasıdır. Bu nedenle uygulama ilk açılışta yurt dışı aktarım için <strong>açık rızanızı</strong> ister; onay vermezseniz uygulama açılmaz. Onayınız tarih ve metin sürümüyle birlikte kendi bilgisayarınızda <code>%USERPROFILE%\.kdv_kontrol\kvkk_onay.json</code> dosyasında saklanır. Onayınızı <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> adresine yazarak dilediğiniz zaman geri alabilirsiniz.</p>
 
     <h2>Çerez ve izleme</h2>
-    <p>Bu sitede çerez, analitik veya takip betiği yoktur. Uygulamada kullanım verisi toplayan bir bileşen yoktur.</p>
+    <p>Bu sitede çerez, analitik veya takip betiği yoktur; yazı tipleri ve ikonlar kendi sunucumuzdan yüklenir, ziyaretiniz sırasında üçüncü taraf bir CDN'e istek gitmez. Uygulamada kullanım verisi toplayan bir bileşen yoktur.</p>
 
-    <h2>Saklama ve silme</h2>
-    <p>Veriler, lisansınız geçerli olduğu sürece ve sonrasında yasal yükümlülükler için gerekli süre boyunca saklanır. Silinmesini isterseniz <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> adresine cihaz parmak izinizle (uygulamada görünür) yazmanız yeterlidir; kayıtlar silinir. Lisans kaydı silindiğinde program lisans doğrulamasını yapamayacağı için kilitlenir.</p>
+    <h2>Saklama süresi</h2>
+    <ul class="legal__list">
+      <li><strong>Lisans kaydı:</strong> lisans geçerli olduğu sürece ve sonrasında <strong>2 yıl</strong>.</li>
+      <li><strong>Sunucu işlem kayıtları:</strong> en fazla son <strong>1.000 kayıt</strong>; eski kayıtlar otomatik silinir.</li>
+      <li><strong>E-posta yazışmaları:</strong> yazışmanın sona ermesinden itibaren <strong>2 yıl</strong>.</li>
+      <li><strong>Kendi bilgisayarınızdaki veriler:</strong> siz silene kadar.</li>
+    </ul>
+    <p>Silinmesini isterseniz <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> adresine cihaz parmak izinizle (uygulamada görünür) yazmanız yeterlidir; kayıtlar silinir. Lisans kaydı silindiğinde program lisans doğrulamasını yapamayacağı için kilitlenir.</p>
+
+    <h2>Veri ihlali bildirimi</h2>
+    <p>Kişisel verilerinizde bir güvenlik ihlali tespit edilirse:</p>
+    <ul class="legal__list">
+      <li>İhlal, öğrenildiği andan itibaren en geç <strong>72 saat</strong> içinde Kişisel Verileri Koruma Kurulu'na bildirilir.</li>
+      <li>Etkilenen kişilere makul olan en kısa sürede doğrudan (e-posta ile) bilgi verilir.</li>
+      <li>Bildirimde ihlalin niteliği, etkilenen veri kategorileri, olası sonuçlar ve alınan önlemler yer alır.</li>
+    </ul>
 
     <h2>Haklarınız (KVKK m.11)</h2>
     <ul class="legal__list">
@@ -124,6 +167,7 @@
     <a class="link" href="kvkk.html">KVKK</a>
     <a class="link" href="mesafeli-satis.html">Mesafeli satış</a>
     <a class="link" href="iade.html">İade</a>
+    <a class="link" href="lisans.html">Lisans sözleşmesi</a>
     <a class="link" href="kvkk-en.html" lang="en">English</a>
   </nav>
   <span class="muted">© 2026 Arda Ekiz</span>

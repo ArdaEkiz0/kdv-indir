@@ -34,7 +34,7 @@
       <span class="line"><span data-line style="--i:1">plainly and narrowly.</span></span>
     </h1>
     <p class="lead">KDV Cross-Check collects only a few technical values for license verification. Every item and its purpose are listed below, including the device fingerprint and IP address.</p>
-    <p class="small muted">Last updated: 2 November 2026</p>
+    <p class="small muted">Last updated: 3 November 2026</p>
   </section>
 
   <section class="wrap legal">
@@ -92,14 +92,57 @@
     <h2>What stays on your computer</h2>
     <p>Your invoices, ledger records, control tables and every generated report are processed and stored only on your own computer. They are never sent to the server. There is no telemetry, usage analytics or screen recording in the application.</p>
 
-    <h2>Collection method, legal basis and transfers</h2>
-    <p>The technical data above is collected by the automatic HTTPS request the application makes at startup. The legal basis is the performance of the license contract and our legitimate interest (preventing license abuse). The data is stored on Cloudflare (Workers KV), our hosting provider. The update check makes a separate HTTPS request to GitHub, where your IP address is also visible.</p>
+    <h2>Collection method and legal basis</h2>
+    <p>The technical data above is collected by the automatic HTTPS request the application makes at startup. The legal basis is the performance of the license contract and our legitimate interest (preventing license abuse).</p>
+
+    <h2>Transfer abroad (Article 9, Law No. 6698)</h2>
+    <p>The data is stored on the infrastructure of <strong>Cloudflare, Inc.</strong> (Workers &amp; KV), our hosting provider. Cloudflare servers sit outside Türkiye, in various regions of the world, so the device fingerprint, IP address and technical records <strong>are transferred abroad</strong>.</p>
+    <table class="legal__table">
+      <thead>
+        <tr><th>Recipient</th><th>Country</th><th>Data transferred</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cloudflare, Inc. (Workers, KV)</td>
+          <td>United States and global edge locations</td>
+          <td>Device fingerprint, IP address, machine name, operating system, application version</td>
+          <td>Licence verification and record keeping</td>
+        </tr>
+        <tr>
+          <td>GitHub, Inc.</td>
+          <td>United States</td>
+          <td>IP address (only during the update check)</td>
+          <td>Checking whether a new version exists</td>
+        </tr>
+        <tr>
+          <td>Google LLC (Gmail)</td>
+          <td>United States</td>
+          <td>Your e-mail address and the contents of the correspondence</td>
+          <td>Only if you send us an e-mail</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The storage location cannot be chosen, so the transfer is inseparable from the service. For that reason the application asks for your <strong>explicit consent</strong> to the transfer abroad on first launch; without consent it does not open. Your consent is stored, with its date and text version, on your own computer in <code>%USERPROFILE%\.kdv_kontrol\kvkk_onay.json</code>. You may withdraw it at any time by writing to <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a>.</p>
 
     <h2>Cookies and tracking</h2>
-    <p>This site uses no cookies, analytics or tracking scripts. The application contains no component that collects usage data.</p>
+    <p>This site uses no cookies, analytics or tracking scripts; fonts and icons are served from our own domain, so no third-party CDN request is made while you visit. The application contains no component that collects usage data.</p>
 
-    <h2>Retention and deletion</h2>
-    <p>Data is kept while your licence is valid and afterwards for as long as legal obligations require. To have it deleted, write to <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> with your device fingerprint (shown in the application); the record is then deleted. Note that once the licence record is gone the application can no longer verify itself and locks.</p>
+    <h2>Retention period</h2>
+    <ul class="legal__list">
+      <li><strong>Licence record:</strong> while the licence is valid and for <strong>2 years</strong> afterwards.</li>
+      <li><strong>Server operation logs:</strong> at most the last <strong>1,000 records</strong>; older records are deleted automatically.</li>
+      <li><strong>E-mail correspondence:</strong> <strong>2 years</strong> after the correspondence ends.</li>
+      <li><strong>Data on your own computer:</strong> until you delete it.</li>
+    </ul>
+    <p>To have your record deleted, write to <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> with your device fingerprint (shown in the application); the record is then deleted. Note that once the licence record is gone the application can no longer verify itself and locks.</p>
+
+    <h2>Data breach notification</h2>
+    <p>If a security breach affecting your personal data is detected:</p>
+    <ul class="legal__list">
+      <li>The breach is notified to the Turkish Personal Data Protection Board within <strong>72 hours</strong> of our becoming aware of it.</li>
+      <li>Affected people are informed directly (by e-mail) as soon as reasonably possible.</li>
+      <li>The notification states the nature of the breach, the categories of data affected, the possible consequences and the measures taken.</li>
+    </ul>
 
     <h2>Your rights (Article 11, Turkish Data Protection Law No. 6698)</h2>
     <ul class="legal__list">
@@ -124,6 +167,7 @@
     <a class="link" href="kvkk-en.html">Privacy</a>
     <a class="link" href="mesafeli-satis-en.html">Distance sales</a>
     <a class="link" href="iade-en.html">Returns</a>
+    <a class="link" href="lisans-en.html">Licence agreement</a>
     <a class="link" href="kvkk.html" lang="tr">Türkçe</a>
   </nav>
   <span class="muted">© 2026 Arda Ekiz</span>

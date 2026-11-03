@@ -1,0 +1,69 @@
+﻿KDV ÇAPRAZ KONTROL — SON KULLANICI LİSANS SÖZLEŞMESİ (EULA)
+Sürüm 1.1 · 3 Kasım 2026
+
+Bu sözleşme, KDV Çapraz Kontrol yazılımını kurarken ve kullanırken uymanız gereken
+koşulları belirler. Kuruluma devam ederek bu metni okuduğunuzu ve kabul ettiğinizi
+beyan etmiş olursunuz.
+
+1. TARAFLAR
+   Lisans veren : Arda Mehmet Ekiz — ardaekiz72@gmail.com — 0546 208 38 54
+   Lisans alan  : Yazılımı kuran ve kullanan gerçek veya tüzel kişi.
+
+2. VERİLEN LİSANS
+   Lisans veren, KDV Çapraz Kontrol yazılımını TEK BİR BİLGİSAYARDA, sözleşme
+   süresi boyunca kullanmanız için münhasır olmayan, devredilemez bir kullanım
+   hakkı verir. Lisans, sunucudan cihazınıza tanımlanır; uygulamada anahtar (key)
+   girişi yoktur.
+
+3. KAPSAM VE SINIRLAR
+   İzin verilenler:
+     • Yazılımı lisansladığınız bilgisayara kurmak ve kullanmak.
+     • Kendi kullanımınız için yedek almak.
+
+   Yasak olanlar:
+     • Lisansı birden fazla bilgisayarda kullanmak veya cihaz sayısını aşmak.
+     • Yazılımı kopyalamak, satmak, kiralamak, alt lisans vermek, dağıtmak.
+     • Tersine mühendislik yapmak, kaynak kodu çıkarmak, lisans doğrulamasını
+       atlatmak veya değiştirmek.
+     • Lisans yetkisini paylaşmak, başka cihazlara kopyalamak veya herkese açık
+       biçimde yayınlamak.
+
+4. FİKRİ MÜLKİYET
+   Yazılımın telif hakkı ve tüm fikri mülkiyet hakları lisans verende kalır. Bu
+   sözleşme size mülkiyet hakkı devretmez, yalnızca kullanım hakkı verir.
+
+5. LİSANS DOĞRULAMA VE KİŞİSEL VERİLER
+   Yazılım, lisansı doğrulamak için donanım kimliği ve teknik bilgileri sunucuya
+   gönderir. Bu verilerin işlenmesi KVKK Aydınlatma Metni'nde açıklanmıştır. İlk
+   açılışta yurt dışı aktarım için açık rızanız alınır; onay vermezseniz yazılım
+   açılmaz.
+   Tam metin: https://ardaekiz0.github.io/kdv-capraz-kontrol/kvkk.html
+
+6. GÜNCELLEMELER
+   Lisans veren, yazılımı güncelleme hakkını saklı tutar. Güncellemeler aynı
+   lisans koşullarına tabidir.
+
+7. GARANTİ REDDİ
+   Yazılım "olduğu gibi" sunulur. Lisans veren, yazılımın kesintisiz veya hatasız
+   çalışacağını garanti etmez. Yazılımın ürettiği vergi ve muhasebe sonuçlarının
+   doğruluğundan kullanıcı sorumludur; nihai beyan ve bildirimlerin sorumluluğu
+   kullanıcıya aittir.
+
+8. SORUMLULUK SINIRI
+   Lisans veren, yazılımın kullanımından doğan dolaylı zararlardan, veri kaybından
+   veya kâr kaybından sorumlu tutulamaz. Toplam sorumluluk, ödenen lisans bedeliyle
+   sınırlıdır.
+
+9. SÜRE VE FESİH
+   Lisans, satın alma sırasında belirtilen süre boyunca geçerlidir (yıllık). Bu
+   sözleşmenin ihlali hâlinde lisans veren, lisansı bildirimle sona erdirebilir.
+   Süre sonunda yazılım çalışmaz; yeni dönem için ayrıca lisans alınması gerekir.
+
+10. UYGULANACAK HUKUK
+   Bu sözleşmeye Türkiye Cumhuriyeti hukuku uygulanır. Tüketici işlemlerinde Ön
+   Bilgilendirme Formu ve Mesafeli Satış Sözleşmesi hükümleri saklıdır.
+   Tam metin: https://ardaekiz0.github.io/kdv-capraz-kontrol/mesafeli-satis.html
+
+11. KABUL
+   Yazılımı kurarak veya kullanarak bu sözleşmeyi okuduğunuzu ve kabul ettiğinizi
+   beyan etmiş olursunuz. Kabul etmiyorsanız yazılımı kurmayınız ve kullanmayınız.
