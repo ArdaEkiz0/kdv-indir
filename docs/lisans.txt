@@ -15,6 +15,13 @@ beyan etmiş olursunuz.
    hakkı verir. Lisans, sunucudan cihazınıza tanımlanır; uygulamada anahtar (key)
    girişi yoktur.
 
+   DENEME: Lisans satın alınmadan önce yazılım 15 gün ücretsiz denenebilir.
+   Deneme, programın ilk kez lisans sunucusuna bağlandığı anda başlar ve
+   cihaz başına değil internet bağlantısı (ağ) başına tanımlanır; aynı
+   ağdaki ikinci bilgisayar yeni bir süre almaz, kalan süreyi devralır.
+   Henüz sunucuya bağlanmamış yeni kurulum internet yokken en fazla 3 gün
+   açılır. Deneme sona erdiğinde yazılım, lisans satın alınmadan kullanılamaz.
+
 3. KAPSAM VE SINIRLAR
    İzin verilenler:
      - Yazılımı lisansladığınız bilgisayara kurmak ve kullanmak.
