@@ -6,30 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KDV Çapraz Kontrol · Compare your sales invoices against your VAT ledger</title>
 <meta name="description" content="Compares your sales invoices (e-Invoice, VAT offset slips, Excel) against your VAT ledger (KDV control list) and lists missing, incorrect and duplicated VAT entries with their results; a Windows desktop application.">
-
-<!-- Open Graph / Facebook / Instagram -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://ardaekiz0.github.io/kdv-indir/index-en.html">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="KDV Çapraz Kontrol">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://ardaekiz0.github.io/kdv-indir/index-en.html">
-<meta property="og:title" content="KDV Çapraz Kontrol · Leave no VAT difference">
-<meta property="og:description" content="Compares your sales invoices (e-Invoice, VAT offset slips, Excel) against your VAT ledger; lists missing and duplicated VAT entries.">
+<meta property="og:title" content="KDV Çapraz Kontrol · Compare your sales invoices against your VAT ledger">
+<meta property="og:description" content="Compares your sales invoices (e-Invoice, VAT offset slips, Excel) against your VAT ledger (KDV control list) and lists missing, incorrect and duplicated VAT entries with their results; a Windows desktop application.">
 <meta property="og:image" content="https://ardaekiz0.github.io/kdv-indir/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="KDV Çapraz Kontrol comparing sales invoices against a VAT ledger">
-
-<!-- Twitter -->
+<meta property="og:image:alt" content="KDV Capraz Kontrol interface">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://ardaekiz0.github.io/kdv-indir/index-en.html">
-<meta name="twitter:title" content="KDV Çapraz Kontrol · Leave no VAT difference">
-<meta name="twitter:description" content="Compares your sales invoices (e-Invoice, VAT offset slips, Excel) against your VAT ledger; lists missing and duplicated VAT entries.">
+<meta name="twitter:title" content="KDV Çapraz Kontrol · Compare your sales invoices against your VAT ledger">
+<meta name="twitter:description" content="Compares your sales invoices (e-Invoice, VAT offset slips, Excel) against your VAT ledger (KDV control list) and lists missing, incorrect and duplicated VAT entries with their results; a Windows desktop application.">
 <meta name="twitter:image" content="https://ardaekiz0.github.io/kdv-indir/og-image.png">
 
+
 <meta name="theme-color" content="#2563eb">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script src="js-baslat.js"></script>
 </head>
-<body>
+<body class="has-mobile-cta">
 
 <header class="wrap">
   <nav class="nav" aria-label="Main menu">
@@ -310,7 +312,7 @@
     <div class="contact__grid">
       <div class="contact__col">
         <p class="contact__prompt"><span>Got a question?</span><span class="soft">Write for licence and questions.</span></p>
-        <form class="contact__form" data-subject="KDV Çapraz Kontrol: licence and questions">
+        <form class="contact__form" novalidate data-subject="KDV Çapraz Kontrol: licence and questions">
           <div class="contact__field">
             <label class="sr-only" for="eposta">Your e-mail address</label>
             <input class="field" id="eposta" name="eposta" type="email" placeholder="Your e-mail address" required>
@@ -318,6 +320,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
           </div>
+          <p class="contact__error small" role="alert" hidden></p>
           <p class="contact__next small muted">Pressing Send opens your e-mail application.</p>
         </form>
       </div>
@@ -351,5 +354,13 @@
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="scene.js"></script>
 <script src="app.js"></script>
+<div class="mobile-cta" aria-label="Download free">
+  <span class="mobile-cta__text">Free 15-day trial</span>
+  <a class="button" href="indir-en/" data-press>Download free</a>
+</div>
+<aside class="cookie-note" id="cerez-notu" role="note" aria-label="Cookie notice" hidden>
+  <p>This site uses no cookies, analytics or tracking scripts. Your browser only stores a small preference so this note stays closed.</p>
+  <button type="button" data-cerez-kapat>Got it</button>
+</aside>
 </body>
 </html>

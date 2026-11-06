@@ -685,6 +685,25 @@ p + p { margin-top: 0.9em; }
   .legal__table td:first-child { padding-right: 1.25rem; }
 }
 
+/* ---------- cerez bilgi notu (cerez/analitik yok) ---------- */
+.cookie-note {
+  position: fixed; left: 50%; bottom: 1rem; transform: translateX(-50%);
+  z-index: 60; width: min(34rem, calc(100% - 2rem));
+  background: var(--surface); color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--muted) 30%, transparent);
+  border-radius: var(--radius); padding: .9rem 1rem;
+  font-size: var(--step-small); line-height: 1.5;
+  display: flex; gap: .8rem; align-items: center; flex-wrap: wrap;
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+.cookie-note[hidden] { display: none; }
+.cookie-note p { margin: 0; flex: 1 1 14rem; }
+.cookie-note button {
+  font: inherit; cursor: pointer; border: 0; border-radius: 999px;
+  padding: .35rem .9rem; background: var(--accent); color: #fff;
+}
+@media (max-width: 47.99em) { .cookie-note { bottom: 5.2rem; } }
+
 /* ---------- indirme sayfasi (/indir) ---------- */
 .dl-grid {
   margin-top: var(--gutter);
@@ -707,3 +726,21 @@ p + p { margin-top: 0.9em; }
   line-height: 1.25;
 }
 .dl-card .button { justify-self: start; }
+/* ---------- mobilde sabit indirme cubugu ---------- */
+.mobile-cta { display: none; }
+@media (max-width: 47.99em) {
+  .mobile-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: .75rem; padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+    background: var(--bg); border-top: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
+    box-shadow: 0 -6px 24px rgba(0,0,0,.08);
+  }
+  .mobile-cta__text { font-size: var(--step-small); line-height: 1.25; }
+  .mobile-cta .button { padding: .55rem 1.1rem; }
+  body.has-mobile-cta { padding-bottom: 4.6rem; }
+}
+
+/* ---------- form hata mesaji ---------- */
+.contact__error { color: #dc2626; margin-top: .4rem; }
+[data-theme="dark"] .contact__error { color: #f87171; }

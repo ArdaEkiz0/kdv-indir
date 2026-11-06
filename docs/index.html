@@ -6,30 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KDV Çapraz Kontrol · Satış faturalarınızı muavin defterinizle karşılaştırın</title>
 <meta name="description" content="e-Fatura, MAHSUP fişi ve Excel faturalarınızı muavin defterinizle (KDV kontrol cetveliyle) karşılaştırır; eksik, hatalı ve mükerrer KDV kayıtlarını sonucuyla birlikte listeleyen Windows masaüstü uygulaması.">
-
-<!-- Open Graph / Facebook / Instagram -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://ardaekiz0.github.io/kdv-indir/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="KDV Çapraz Kontrol">
+<meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://ardaekiz0.github.io/kdv-indir/">
-<meta property="og:title" content="KDV Çapraz Kontrol · KDV’de fark kalmasın">
-<meta property="og:description" content="e-Fatura, MAHSUP fişi ve Excel faturalarınızı muavin defterinizle karşılaştırın; eksik ve mükerrer KDV kayıtlarını listeler.">
+<meta property="og:title" content="KDV Çapraz Kontrol · Satış faturalarınızı muavin defterinizle karşılaştırın">
+<meta property="og:description" content="e-Fatura, MAHSUP fişi ve Excel faturalarınızı muavin defterinizle (KDV kontrol cetveliyle) karşılaştırır; eksik, hatalı ve mükerrer KDV kayıtlarını sonucuyla birlikte listeleyen Windows masaüstü uygulaması.">
 <meta property="og:image" content="https://ardaekiz0.github.io/kdv-indir/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="KDV Çapraz Kontrol satış faturası ile e-Fatura karşılaştırması">
-
-<!-- Twitter -->
+<meta property="og:image:alt" content="KDV Çapraz Kontrol arayüzü">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://ardaekiz0.github.io/kdv-indir/">
-<meta name="twitter:title" content="KDV Çapraz Kontrol · KDV’de fark kalmasın">
-<meta name="twitter:description" content="e-Fatura, MAHSUP fişi ve Excel faturalarınızı muavin defterinizle karşılaştırın; eksik ve mükerrer KDV kayıtlarını listeler.">
+<meta name="twitter:title" content="KDV Çapraz Kontrol · Satış faturalarınızı muavin defterinizle karşılaştırın">
+<meta name="twitter:description" content="e-Fatura, MAHSUP fişi ve Excel faturalarınızı muavin defterinizle (KDV kontrol cetveliyle) karşılaştırır; eksik, hatalı ve mükerrer KDV kayıtlarını sonucuyla birlikte listeleyen Windows masaüstü uygulaması.">
 <meta name="twitter:image" content="https://ardaekiz0.github.io/kdv-indir/og-image.png">
 
+
 <meta name="theme-color" content="#2563eb">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script src="js-baslat.js"></script>
 </head>
-<body>
+<body class="has-mobile-cta">
 
 <header class="wrap">
   <nav class="nav" aria-label="Ana menü">
@@ -310,7 +312,7 @@
     <div class="contact__grid">
       <div class="contact__col">
         <p class="contact__prompt"><span>Bir sorunuz mu var?</span><span class="soft">Lisans ve sorular için yazın.</span></p>
-        <form class="contact__form" data-subject="KDV Çapraz Kontrol: lisans ve sorular">
+        <form class="contact__form" novalidate data-subject="KDV Çapraz Kontrol: lisans ve sorular">
           <div class="contact__field">
             <label class="sr-only" for="eposta">E-posta adresiniz</label>
             <input class="field" id="eposta" name="eposta" type="email" placeholder="E-posta adresiniz" required>
@@ -318,6 +320,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
           </div>
+          <p class="contact__error small" role="alert" hidden></p>
           <p class="contact__next small muted">Gönder’e bastığınızda e-posta uygulamanız açılır.</p>
         </form>
       </div>
@@ -351,5 +354,13 @@
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="scene.js"></script>
 <script src="app.js"></script>
+<div class="mobile-cta" aria-label="Ücretsiz indir">
+  <span class="mobile-cta__text">15 gün ücretsiz deneme</span>
+  <a class="button" href="indir/" data-press>Ücretsiz indir</a>
+</div>
+<aside class="cookie-note" id="cerez-notu" role="note" aria-label="Çerez bilgisi" hidden>
+  <p>Bu sitede çerez, analitik veya takip betiği yok. Yalnız bu notu bir kez kapatmanız için tarayıcınızda küçük bir tercih kaydı tutulur.</p>
+  <button type="button" data-cerez-kapat>Anladım</button>
+</aside>
 </body>
 </html>

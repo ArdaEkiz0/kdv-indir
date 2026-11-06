@@ -43,17 +43,52 @@
     });
   });
 
-  /* ---------- iletişim alanı: e-posta taslağı açar, sunucu yok ---------- */
+  /* ---------- iletişim alanı: doğrulama + e-posta taslağı (sunucu yok) ---------- */
   var form = document.querySelector('.contact__form');
   if (form) {
+    var eposta = document.getElementById('eposta');
+    var formErr = form.querySelector('.contact__error');
+    var epostaGecerli = function (v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    };
+    var hataGoster = function (mesaj) {
+      if (!formErr) return;
+      formErr.textContent = mesaj;
+      formErr.hidden = false;
+      if (eposta) {
+        eposta.setAttribute('aria-invalid', 'true');
+        eposta.focus();
+      }
+    };
+    var hatayiTemizle = function () {
+      if (!formErr) return;
+      formErr.hidden = true;
+      if (eposta) eposta.removeAttribute('aria-invalid');
+    };
+    if (eposta) {
+      eposta.addEventListener('input', function () {
+        if (epostaGecerli(eposta.value.trim())) hatayiTemizle();
+      });
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var input = form.querySelector('input');
-      var body = input && input.value ? input.value.trim() : '';
+      var v = eposta ? eposta.value.trim() : '';
+      var ingilizce = (document.documentElement.lang || 'tr').slice(0, 2) === 'en';
+      if (!v) {
+        hataGoster(ingilizce ? 'Please enter your email address.' : 'Lütfen e-posta adresinizi yazın.');
+        return;
+      }
+      if (!epostaGecerli(v)) {
+        hataGoster(ingilizce
+          ? 'Enter a valid email address (example: name@site.com).'
+          : 'Geçerli bir e-posta adresi yazın (örnek: ad@site.com).');
+        return;
+      }
+      hatayiTemizle();
       var subject = form.getAttribute('data-subject') || '';
       var href = 'mailto:ardaekiz72@gmail.com';
       href += '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body + '\n\n(' + (input ? input.name : '') + ')');
+        '&body=' + encodeURIComponent(v + '\n\n(' + (eposta ? eposta.name : '') + ')');
       window.location.href = href;
     });
   }
@@ -121,3 +156,20 @@
     });
   }
 })();
+
+  /* ---------- cerez bilgi notu (cerez yok; yalniz bilgi) ---------- */
+  document.addEventListener('DOMContentLoaded', function () {
+    var cerezNotu = document.getElementById('cerez-notu');
+    if (!cerezNotu) return;
+    var ANAHTAR = 'kdv-cerez-notu-kapandi';
+    var kapandi = false;
+    try { kapandi = localStorage.getItem(ANAHTAR) === '1'; } catch (err) {}
+    if (!kapandi) cerezNotu.hidden = false;
+    var kapatBtn = cerezNotu.querySelector('[data-cerez-kapat]');
+    if (kapatBtn) {
+      kapatBtn.addEventListener('click', function () {
+        cerezNotu.hidden = true;
+        try { localStorage.setItem(ANAHTAR, '1'); } catch (err) {}
+      });
+    }
+  });
