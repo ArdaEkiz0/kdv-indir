@@ -91,7 +91,7 @@
       <li><a class="link" href="https://www.virustotal.com/gui/file/12cf176e85b4eb586061ad614daf3571bc7a1870fbf12c8c273c5194a923d434">Kurulum dosyası · VirusTotal</a></li>
       <li><a class="link" href="https://www.virustotal.com/gui/file/cce0586276c58d9d4ace746e9512948ffb75fd0dec91fa1fc72a2dc1fb98c362">Taşınabilir paket · VirusTotal</a></li>
     </ul>
-    <p>VirusTotal bir dosyayı ilk kez görüyorsa sonuç birkaç dakika içinde oluşur; sayfa açıldığında tarama henüz bitmemişse kısa süre sonra tekrar bakın.</p>
+    <p>VirusTotal yalnız kendisine yüklenen dosyaları tarar; sürüm yeni yayımlandıysa bağlantı <em>Item not found</em> diyebilir — bu bir tarama sonucu değildir, kaydın henüz oluşmadığı anlamına gelir. Bu arada dosyanın doğruluğunu kendiniz kontrol edebilirsiniz: PowerShell'de <code>Get-FileHash .\KDV-Capraz-Kontrol-kurulum.exe -Algorithm SHA256</code> çıktısı, <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> içindeki değerle birebir aynı olmalı.</p>
 
     <h2>Kurulum</h2>
     <ol class="legal__list legal__list--num">

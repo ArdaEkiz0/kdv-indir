@@ -91,7 +91,7 @@
       <li><a class="link" href="https://www.virustotal.com/gui/file/12cf176e85b4eb586061ad614daf3571bc7a1870fbf12c8c273c5194a923d434">Installer · VirusTotal</a></li>
       <li><a class="link" href="https://www.virustotal.com/gui/file/cce0586276c58d9d4ace746e9512948ffb75fd0dec91fa1fc72a2dc1fb98c362">Portable package · VirusTotal</a></li>
     </ul>
-    <p>If VirusTotal is seeing a file for the first time, the result appears within a few minutes; if the scan has not finished when the page opens, check again shortly.</p>
+    <p>VirusTotal only scans files that are submitted to it; a freshly released version may show <em>Item not found</em> — that is not a scan result, it means the record does not exist yet. Meanwhile you can verify the file yourself: in PowerShell, <code>Get-FileHash .\KDV-Capraz-Kontrol-kurulum.exe -Algorithm SHA256</code> must match the value in <a class="link" href="https://github.com/ArdaEkiz0/kdv-indir/releases/latest/download/SHA256SUMS.txt">SHA256SUMS.txt</a> exactly.</p>
 
     <h2>Installation</h2>
     <ol class="legal__list legal__list--num">
