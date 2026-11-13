@@ -457,22 +457,6 @@ p + p { margin-top: 0.9em; }
 .plan__micro { font-size: 0.8125rem; color: var(--muted); }
 .plan__quote { font-size: var(--step-small); color: var(--muted); }
 
-/* ölçek eki: kart değil, tek satır */
-.scale-row {
-  margin-top: var(--gutter);
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 0.75rem 2rem;
-  padding: 1.15rem clamp(1.4rem, 2.2vw, 1.9rem);
-  border: 1px solid var(--rule); border-radius: var(--radius);
-}
-.scale-row__title { font-size: var(--step-small); font-weight: 500; }
-.scale-row__note { font-size: 0.8125rem; color: var(--muted); }
-.scale-row__price {
-  font-family: var(--font-display); font-size: var(--step-label);
-  letter-spacing: -0.01em; white-space: nowrap; font-variant-numeric: tabular-nums;
-}
-.scale-row__price span { font-family: var(--font-text); font-size: var(--step-small); color: var(--muted); }
-
 /* tarife tablosu */
 .tarife { margin-top: clamp(2.25rem, 4vw, 3.5rem); }
 .tarife__table { width: 100%; border-collapse: collapse; font-size: var(--step-small); }
@@ -742,7 +726,6 @@ p + p { margin-top: 0.9em; }
   .plan__figure { font-size: clamp(2.5rem, 12vw, 3rem); }
   .plan__for { max-width: none; }
 
-  .scale-row { align-items: flex-start; flex-direction: column; }
   /* mobilde tablo gizlenir: aynı bilgi paket kartlarında zaten var */
   .tarife { display: none; }
   .trust { grid-template-columns: 1fr 1fr; }
@@ -772,6 +755,8 @@ p + p { margin-top: 0.9em; }
 
   .teklif-row { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
   .teklif-row .link { display: inline-flex; align-items: center; min-height: 44px; }
+  /* ayırıcı nokta tek başına satıra düşmesin */
+  .teklif-row .muted { display: none; }
 }
 
 @media (min-width: 48em) and (max-width: 64em) {
