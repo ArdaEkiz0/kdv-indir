@@ -200,28 +200,28 @@
       <div class="compare__rows">
         <div class="compare__row">
           <div class="name">Hız</div>
-          <div class="us"><span>100 kayıt ≈ 1 dakika</span></div>
-          <div class="lab">Saatler</div>
+          <div class="us" data-etiket="KDV Çapraz Kontrol"><span>100 kayıt ≈ 1 dakika</span></div>
+          <div class="lab" data-etiket="Manuel kontrol">Saatler</div>
         </div>
         <div class="compare__row">
           <div class="name">Doğruluk</div>
-          <div class="us"><span>Kurala dayalı</span></div>
-          <div class="lab">İnsana bağlı</div>
+          <div class="us" data-etiket="KDV Çapraz Kontrol"><span>Kurala dayalı</span></div>
+          <div class="lab" data-etiket="Manuel kontrol">İnsana bağlı</div>
         </div>
         <div class="compare__row">
           <div class="name">Sonuç</div>
-          <div class="us"><span>Satır bazlı</span></div>
-          <div class="lab">Genel toplam</div>
+          <div class="us" data-etiket="KDV Çapraz Kontrol"><span>Satır bazlı</span></div>
+          <div class="lab" data-etiket="Manuel kontrol">Genel toplam</div>
         </div>
         <div class="compare__row">
           <div class="name">Rapor</div>
-          <div class="us"><span>Otomatik</span></div>
-          <div class="lab">Elle yazılır</div>
+          <div class="us" data-etiket="KDV Çapraz Kontrol"><span>Otomatik</span></div>
+          <div class="lab" data-etiket="Manuel kontrol">Elle yazılır</div>
         </div>
         <div class="compare__row">
           <div class="name">Mükerrer</div>
-          <div class="us"><span>İşaretler</span></div>
-          <div class="lab">Gözden kaçar</div>
+          <div class="us" data-etiket="KDV Çapraz Kontrol"><span>İşaretler</span></div>
+          <div class="lab" data-etiket="Manuel kontrol">Gözden kaçar</div>
         </div>
       </div>
     </div>
@@ -240,28 +240,141 @@
 
   <!-- ================= LİSANS ================= -->
   <section class="section wrap" id="lisans">
-    <h2 class="head" style="margin-bottom: 2.5rem">15 gün ücretsiz deneme.</h2>
-    <div class="plans__grid">
-      <div class="plan">
-        <div>
-          <h3 class="plans__figure"><span class="plans__number">15</span> <span class="plans__period">gün ücretsiz deneme</span></h3>
-          <p class="muted" style="margin-top: 1rem">Deneme, program ilk kez sunucuya bağlandığında başlar; bu süre boyunca tüm özellikler açıktır. Kurulum dosyasıyla veya taşınabilir sürümle çalışır.</p>
-          <p class="small muted" style="margin-top: 0.75rem">Deneme 15 gün, cihaz başına değil <strong>ağ (IP) başına</strong> tanımlıdır: aynı ofis/ağdaki ikinci bilgisayar sıfırdan 15 gün almaz, ağın kalan süresini devralır.</p>
-        </div>
-        <p class="small muted">Windows 10 ve 11’de çalışır; kayıtlarınız bilgisayarınızdan çıkmaz.</p>
-        <a class="button" href="indir/" data-press>Ücretsiz indir</a>
-      </div>
-      <div class="plan">
-        <div>
-          <h3 class="plans__figure"><span class="plans__number">12.900</span> <span class="plans__period">TL + KDV / yıl</span></h3>
-          <p class="muted" style="margin-top: 1rem">Kurucu müşteri fiyatı — ilk 10 cihaz; yenilemede de aynı fiyat. Bir bilgisayar, sınırsız mükellef.</p>
-          <p class="small muted" style="margin-top: 0.75rem">Liste fiyatı 19.900 TL + KDV / yıl. Ofis paketi (3 bilgisayar) 44.900 TL · Büro paketi (5 bilgisayar) 69.900 TL + KDV / yıl. 150+ mükellef taşıyan ofisler için ölçek eki +9.900 TL.</p>
-          <p class="small muted" style="margin-top: 0.75rem">Süre dolunca program kilitlenir, çalışmalarınız korunur. Yetki sunucudan bu cihaza tanımlanır; anahtar girişi yoktur. Ödeme havale/EFT ile alınır, 14 gün koşulsuz iade.</p>
-        </div>
-        <p class="small muted">Teklif ve sorular için: 0546 208 38 54</p>
-        <a class="button button--quiet" href="#iletisim" data-press>Teklif al</a>
+    <div class="pricing__head">
+      <h2 class="head">Yılda bir kez ödeyin,<br>KDV farkını her ay yakalayın.</h2>
+      <div class="pricing__side">
+        <p class="lead muted">Cihaz başına yıllık lisans; mükellef sayısında sınır yok. Fiyatlar KDV hariçtir.</p>
+        <p class="tag">15 gün ücretsiz deneme · kredi kartı istenmez</p>
       </div>
     </div>
+
+    <div class="plans">
+      <article class="plan plan--lead">
+        <p class="plan__badge">Kurucu fiyatı · ilk 10 cihaz</p>
+        <div>
+          <h3 class="plan__name">Tek Cihaz</h3>
+          <p class="plan__for">Tek bilgisayarda çalışan serbest muhasebeci ve küçük ofisler için</p>
+          <p class="plan__price">
+            <span class="plan__figure">12.900</span>
+            <span class="plan__unit">TL + KDV / yıl</span>
+          </p>
+          <p class="plan__ref">Liste fiyatı <s>19.900 TL</s> + KDV</p>
+          <p class="plan__scope">1 bilgisayar · sınırsız mükellef</p>
+          <ul class="plan__feats">
+            <li>e-Fatura, Excel ve muavin defterini karşılaştırır</li>
+            <li>Eksik, hatalı ve mükerrer KDV kayıtlarını listeler</li>
+            <li>Excel, PDF ve Ba/Bs raporu</li>
+            <li>Yenilemede aynı kurucu fiyat</li>
+          </ul>
+        </div>
+        <div class="plan__foot">
+          <a class="button" href="indir/" data-press>15 gün ücretsiz deneyin</a>
+          <p class="plan__micro">Kredi kartı istenmez · faturalı, havale/EFT</p>
+        </div>
+      </article>
+
+      <article class="plan">
+        <div>
+          <h3 class="plan__name">Ofis · 3 Cihaz</h3>
+          <p class="plan__for">Ortak iş yürüten küçük muhasebe ofisleri için</p>
+          <p class="plan__price">
+            <span class="plan__figure">44.900</span>
+            <span class="plan__unit">TL + KDV / yıl</span>
+          </p>
+          <p class="plan__ref">Tek fatura, tek yenileme tarihi</p>
+          <p class="plan__scope">3 bilgisayar · sınırsız mükellef</p>
+          <ul class="plan__feats">
+            <li>Tek Cihaz paketindeki tüm özellikler</li>
+            <li>3 bilgisayara ayrı kurulum</li>
+            <li>Ölçek eki eklenebilir</li>
+          </ul>
+        </div>
+        <div class="plan__foot">
+          <a class="button button--ghost" href="#iletisim" data-press>Teklif alın</a>
+          <p class="plan__micro">Faturalı, havale/EFT · 14 gün koşulsuz iade</p>
+        </div>
+      </article>
+
+      <article class="plan">
+        <div>
+          <h3 class="plan__name">Büro · 5 Cihaz</h3>
+          <p class="plan__for">Mükellef portföyü büyük, ekibi kalabalık bürolar için</p>
+          <p class="plan__price">
+            <span class="plan__figure">69.900</span>
+            <span class="plan__unit">TL + KDV / yıl</span>
+          </p>
+          <p class="plan__ref">Tek fatura, tek yenileme tarihi</p>
+          <p class="plan__scope">5 bilgisayar · sınırsız mükellef</p>
+          <ul class="plan__feats">
+            <li>Tek Cihaz paketindeki tüm özellikler</li>
+            <li>5 bilgisayara ayrı kurulum</li>
+            <li>Ölçek eki eklenebilir</li>
+          </ul>
+        </div>
+        <div class="plan__foot">
+          <a class="button button--ghost" href="#iletisim" data-press>Teklif alın</a>
+          <p class="plan__micro">Faturalı, havale/EFT · 14 gün koşulsuz iade</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="scale-row">
+      <div>
+        <p class="scale-row__title">Ölçek eki · 150+ mükellef</p>
+        <p class="scale-row__note">Yalnızca ihtiyaç duyan pakete eklenir; mükellef sayısı 150’yi geçen ofisler için.</p>
+      </div>
+      <p class="scale-row__price">+9.900 TL <span>/ yıl</span></p>
+    </div>
+
+    <div class="tarife">
+      <table class="tarife__table">
+        <caption class="sr-only">Paket karşılaştırması: cihaz sayısı, mükellef sınırı ve yıllık bedel</caption>
+        <thead>
+          <tr>
+            <th scope="col">Paket</th>
+            <th scope="col">Cihaz</th>
+            <th scope="col">Mükellef</th>
+            <th scope="col" class="num">Yıllık bedel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="is-lead">
+            <th scope="row">Tek Cihaz <em>Kurucu fiyatı, ilk 10 cihaz</em></th>
+            <td data-e="Cihaz">1</td>
+            <td data-e="Mükellef">Sınırsız</td>
+            <td data-e="Yıllık bedel" class="num">12.900 TL + KDV</td>
+          </tr>
+          <tr>
+            <th scope="row">Ofis <em>3 bilgisayar</em></th>
+            <td data-e="Cihaz">3</td>
+            <td data-e="Mükellef">Sınırsız</td>
+            <td data-e="Yıllık bedel" class="num">44.900 TL + KDV</td>
+          </tr>
+          <tr>
+            <th scope="row">Büro <em>5 bilgisayar</em></th>
+            <td data-e="Cihaz">5</td>
+            <td data-e="Mükellef">Sınırsız</td>
+            <td data-e="Yıllık bedel" class="num">69.900 TL + KDV</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="trust">
+      <div><b>15 gün ücretsiz deneme</b><span>Kredi kartı istenmez</span></div>
+      <div><b>14 gün koşulsuz iade</b><span>Gerekçe belirtmeniz gerekmez</span></div>
+      <div><b>Havale/EFT ile ödeme</b><span>Faturanız ödeme sonrası düzenlenir</span></div>
+      <div><b>Lisans anahtarı yok</b><span>Yetki cihazınıza sunucudan tanımlanır</span></div>
+    </div>
+
+    <p class="teklif-row">
+      <span>10 cihaz üzeri, şube veya kurum faturası için:</span>
+      <a class="link" href="#iletisim">teklif alın</a>
+      <span class="muted">·</span>
+      <a class="link" href="tel:+905462083854">0546 208 38 54</a>
+    </p>
+
+    <p class="small muted" style="margin-top: 1.25rem">Süre dolunca program kilitlenir; kayıtlı çalışmalarınız silinmez. Tek Cihaz paketi ilk 10 cihaz için kurucu fiyatıyla satılır ve yenilemede de aynı fiyat uygulanır; liste fiyatı 19.900 TL + KDV / yıl.</p>
   </section>
 
   <!-- ================= SSS ================= -->
@@ -288,6 +401,14 @@
         <details>
           <summary>Lisans anahtarı girmem gerekiyor mu?<span class="plus" aria-hidden="true"></span></summary>
           <div class="answer"><p>Hayır. Yetki sunucudan bu cihaza tanımlanır; hiçbir ekranda anahtar girişi yoktur.</p></div>
+        </details>
+        <details>
+          <summary>Fiyata KDV dahil mi, fatura nasıl alınır?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Fiyatlar KDV hariçtir; fatura KDV hariç tutar üzerinden düzenlenir. Ödeme havale/EFT ile yapılır, faturanız ödeme sonrası iletilir. Yıllık lisans bedeli 12 aylık kullanım içindir.</p></div>
+        </details>
+        <details>
+          <summary>İade nasıl işler?<span class="plus" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Satın almadan sonraki 14 gün içinde koşulsuz iade; gerekçe belirtmeniz gerekmez. İade talebiniz için <a class="link" href="mailto:ardaekiz72@gmail.com">ardaekiz72@gmail.com</a> adresine yazmanız yeterli. Ayrıntılar <a class="link" href="iade.html">iade koşullarında</a>.</p></div>
         </details>
         <details>
           <summary>Deneme sürümü var mı?<span class="plus" aria-hidden="true"></span></summary>

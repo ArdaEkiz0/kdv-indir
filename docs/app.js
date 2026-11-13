@@ -134,7 +134,7 @@
   rise('.proof', gsap.utils.toArray('.proof li'), { y: 12, duration: 0.5, stagger: 0.07, start: 'top 85%' });
 
   /* 5 · lisans kartları yan yana oturur */
-  rise('.plans__grid', gsap.utils.toArray('.plan'), { y: 26, duration: 0.7, stagger: 0.12 });
+  rise('.plans', gsap.utils.toArray('.plan'), { y: 26, duration: 0.7, stagger: 0.12 });
 
   /* 6 · SSS satırları sırayla açılır */
   rise('.faq__list', gsap.utils.toArray('.faq__list details'), { y: 16, duration: 0.5, stagger: 0.05 });

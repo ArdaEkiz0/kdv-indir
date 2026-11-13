@@ -32,7 +32,7 @@
     renderer.setSize(width, height, false);
 
     var scene = new THREE.Scene();
-    var span = 9;
+    var span = 6.8;
     var aspect = width / height;
     var camera = new THREE.OrthographicCamera(-span * aspect, span * aspect, span, -span, 0.1, 100);
     camera.position.set(0, 0, 20);
@@ -65,8 +65,8 @@
     for (var i = 0; i < ROWS; i++) {
       var y = (ROWS - 1) / 2 * GAP - i * GAP;
       var kind = kinds[i];
-      var left = slab(3.1, 0.62, C.paper);
-      var right = slab(3.1, 0.62, kind === 'ghost' ? C.paperSoft : C.paperSoft);
+      var left = slab(1.45, 0.62, C.paper);
+      var right = slab(1.45, 0.62, kind === 'ghost' ? C.paperSoft : C.paper);
       left.position.set(-12, y, 0);
       right.position.set(12, y, 0);
       group.add(left);
@@ -105,16 +105,12 @@
 
       for (var i = 0; i < pairs.length; i++) {
         var pr = pairs[i];
-        var targetL = pr.kind === 'match' ? -0.72 : -1.35;
-        var targetR = pr.kind === 'match' ? 0.72 : 1.35;
-        if (pr.kind === 'ghost') targetL = -1.35;
+        var targetL = pr.kind === 'match' ? -0.74 : -1.62;
+        var targetR = pr.kind === 'match' ? 0.74 : 1.62;
+        if (pr.kind === 'ghost') targetL = -1.62;
 
         var lx = -12 + (targetL + 12) * enter;
         var rx = 12 + (targetR - 12) * enter;
-        if (pairUp > 0 && pr.kind === 'match') {
-          lx += (0 - lx) * pairUp * 0.42;
-          rx += (0 - rx) * pairUp * 0.42;
-        }
         pr.left.position.x = lx;
         pr.right.position.x = rx;
 
@@ -137,7 +133,7 @@
       group.rotation.x = 0.06 - p * 0.1;
     }
 
-    var progress = calm ? 1 : 0;
+    var progress = calm ? 1 : 0.14;
     frame(progress);
     renderer.render(scene, camera);
 
@@ -165,7 +161,6 @@
       setSteps(1);
       renderNow();
     }
-
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
